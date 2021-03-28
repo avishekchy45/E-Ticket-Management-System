@@ -1,0 +1,12 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+.carousel-item {
+    height: 450px;
+    transition: transform 2s ease, opacity .5s ease-out
+}
+
+.carousel-item img {
+    height: 450px;
+}
