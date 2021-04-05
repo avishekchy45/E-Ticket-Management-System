@@ -32,7 +32,7 @@ include("connection.php");
         <div class="row">
             <div class="col-sm text-center">
                 <?php
-                include("includes/navbar.php");
+                include("includes/navbarhome.php");
                 ?>
             </div>
         </div>

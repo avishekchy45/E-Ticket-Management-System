@@ -34,7 +34,7 @@ if (!isset($_SESSION['user'])) {
     $user_id = $_SESSION["user_id"];
     echo "
         <nav class='navbar navbar-expand-sm bg-info navbar-dark sticky-top'>
-            <a class='navbar-brand' href='index.php'>ticket.com</a>
+            <a class='navbar-brand' href='$user/index.php'>ticket.com</a>
 
             <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
                 <span class='navbar-toggler-icon'></span>
@@ -47,8 +47,8 @@ if (!isset($_SESSION['user'])) {
                     <li class='nav-item dropdown'>
                         <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'> $user_id </a>
                         <div class='dropdown-menu'>
-                            <a class='dropdown-item' href='index.php'>Home</a>
-                            <a class='dropdown-item' href='../settings.php'>Settings</a>
+                            <a class='dropdown-item' href='$user/index.php'>Home</a>
+                            <a class='dropdown-item' href='settings.php'>Settings</a>
                             <a class='dropdown-item text-danger' href='?logout'>LOG OUT</a>
                         </div>
                     </li>
