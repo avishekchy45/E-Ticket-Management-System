@@ -1,12 +1,28 @@
-<nav class='navbar navbar-expand-sm bg-info navbar-dark sticky-top'>    
-        <ul class='navbar-nav'>
-            <li class='nav-item'>
-                <a class='nav-link' href='about.php'> About US </a>
+<br>
+    <nav class="navbar navbar-expand-sm justify-content-center bg-info navbar-dark footer">
+        <ul class="navbar-nav nav-fill">
+            <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT US</a>
             </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='contact.php'> Contact US </a>
+            <li class="nav-item">
+                <a class="nav-link" href="#">CONTACT US</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PRIVACY POLICY</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">COPYRIGHT INFORMATION</a>
             </li>
         </ul>
-</nav>
+    </nav>
 <br>
 
+<style>
+.footer {
+    clear: both; 
+    position: relative;
+    z-index: 1;
+    height: -3em;
+    margin-top: 45em;
+}
+</style>

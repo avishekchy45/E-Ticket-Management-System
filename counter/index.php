@@ -29,7 +29,7 @@ include("../includes/isloggedout.php");
     </div>
 
     <!-- NAVBAR -->
-    <div class="container-fluid">
+    <div class="container-fluid sticky-top">
         <div class="row">
             <div class="col-sm text-center">
                 <?php
