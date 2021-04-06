@@ -20,7 +20,7 @@ if (!isset($_SESSION['user'])) {
                     <div class='dropdown-menu'>
                         <a class='dropdown-item' href='index.php'>Bus</a>
                         <a class='dropdown-item' href='index.php'>Train</a>
-                        <a class='dropdown-item' href='index.php'>Plain</a>
+                        <a class='dropdown-item' href='index.php'>Air</a>
                         <a class='dropdown-item' href='index.php'>Hotel</a>
                     </div>
                 </li>
@@ -63,5 +63,5 @@ if (isset($_GET['logout'])) {
     $_SESSION['login_status'] = "out";
     unset($_SESSION['user']);
     unset($_SESSION['user_id']);
-    echo ("<script>location.href = '../login.php';</script>");
+    echo ("<script>location.href = 'login.php';</script>");
 }

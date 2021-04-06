@@ -3,7 +3,7 @@
 $sql = "SELECT TYPE,COUNT(ID) FROM login GROUP BY TYPE";
 $r = mysqli_query($con, $sql);
 echo "
-    <table class='table table-striped table-hover table-responsive-sm'>
+    <table class='table table-striped table-hover'>
 ";
 while ($row = mysqli_fetch_array($r)) {
     $type = $row['TYPE'];
@@ -24,4 +24,5 @@ while ($row = mysqli_fetch_array($r)) {
 }
 echo "
     </table>
+    <br>
 ";

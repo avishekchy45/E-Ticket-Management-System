@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
         <a class='nav-link active bg-secondary' href='list.php'>List of Owners</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php?home'>Search Bus</a>
+        <a class='nav-link active bg-secondary' href='../index.php'>Search Bus</a>
       </li><br>
     </ul>
     <br>
@@ -35,7 +35,7 @@ if (isset($_SESSION['user'])) {
         <a class='nav-link active bg-secondary' href='schedule.php'>Schedule Bus</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php?home'>Search Bus</a>
+        <a class='nav-link active bg-secondary' href='../index.php'>Search Bus</a>
       </li><br>
     </ul>
     <br>
@@ -48,7 +48,7 @@ if (isset($_SESSION['user'])) {
         <a class='nav-link active bg-secondary' href='booking.php'>Book Ticket</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php?home'>Search Bus</a>
+        <a class='nav-link active bg-secondary' href='../index.php'>Search Bus</a>
       </li><br>
     </ul>
     <br>

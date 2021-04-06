@@ -2,7 +2,7 @@
 $query = "select * from owner";
 $r = mysqli_query($con, $query);
 echo "
-<table class='table table-striped table-hover table-responsive-sm'>
+<table class='table table-striped table-hover'>
 <thead class='thead-dark'>
 <tr>
 <th>USERNAME, NAME, COMPANY NAME</th>

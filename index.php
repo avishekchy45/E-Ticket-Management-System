@@ -28,7 +28,7 @@ include("connection.php");
     </div>
 
     <!-- NAVBAR -->
-    <div class="container-fluid">
+    <div class="container-fluid sticky-top">
         <div class="row">
             <div class="col-sm text-center">
                 <?php
@@ -70,7 +70,6 @@ include("connection.php");
             </div>
         </div>
     </div>
-
 
 </body>
 

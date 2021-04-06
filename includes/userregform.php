@@ -1,5 +1,5 @@
 <br>
-<h2>USER REGISTRATION IS NOT AVAILABLE NOW</h2><br>
+<h2 class='text-danger'>USER REGISTRATION IS NOT AVAILABLE NOW</h2><br>
 <br>
 <form target="_self" enctype="multipart/form-data" method="POST">
     <div class="col">

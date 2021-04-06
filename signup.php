@@ -29,11 +29,11 @@ include("includes/isloggedin.php");
     </div>
 
     <!-- NAVBAR -->
-    <div class="container-fluid">
+    <div class="container-fluid sticky-top">
         <div class="row">
             <div class="col-sm text-center">
                 <?php
-                include("includes/navbar.php");
+                include("includes/navbarhome.php");
                 ?>
             </div>
         </div>
