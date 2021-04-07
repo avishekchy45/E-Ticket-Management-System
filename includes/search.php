@@ -40,7 +40,7 @@
 if (isset($_POST['search'])) {
     $depart = $_POST['from'];
     $dest = $_POST['to'];
-    $query = "select * from bus,owner where bus.DEPARTURE = '$depart' and bus.DESTINATION = '$dest' and bus.owner = owner.USERNAME";
+    $query = "select * from schedule,bus,owner where schedule.BUS_ID = bus.BUS_ID and bus.DEPARTURE = '$depart' and bus.DESTINATION = '$dest' and bus.owner = owner.USERNAME order by TIME";
     $r = mysqli_query($con, $query);
     echo "
     <table class='table table-striped table-hover table-responsive-sm'>
@@ -56,13 +56,14 @@ if (isset($_POST['search'])) {
         $from = $row['DEPARTURE'];
         $to = $row['DESTINATION'];
         $class = $row['CLASS'];
+        $time = $row['TIME'];
         $price = $row['PRICE'];
         $company = $row['COMPANY_NAME'];
         echo "
         <form action='login.php?from=$from&to=$to' target='_self' enctype='multipart/form-data' method='POST'>
         <tbody>
         <tr>
-        <td class='text-left'>From: $from<br>To: $to<br>Class: $class<br>Company: $company</td> 
+        <td class='text-left'>From: $from<br>To: $to<br>Class: $class<br>Company: $company<br>Date & Time: $time</td>
         <td>$price</td>
         <td><button type='submit' class='btn btn-outline-secondary' value='YES' name='yes'>YES</button></td>
         </tr>
