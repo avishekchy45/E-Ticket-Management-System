@@ -4,6 +4,7 @@ $type = $_SESSION['user'];
 $user_id = $_SESSION['user_id'];
 include("../connection.php");
 include("../includes/isloggedout.php");
+include("../includes/isadmin.php");
 ?>
 
 <!DOCTYPE html>
