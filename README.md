@@ -8,10 +8,10 @@
 
 ## This proposed system has four different panels of independent responsibility which are Admin Panel, Owner Panel, Counter Panel & User Panel. 
 
-<img src="https://user-images.githubusercontent.com/63364024/114675436-0a2f6e80-9d2a-11eb-8047-9f3b894d6c59.png" alt="Admin Panel" width="100%">
+![image](https://user-images.githubusercontent.com/63364024/114681817-51b8f900-9d30-11eb-8ad3-3261d80ed0fe.png)
 
-<img src="https://user-images.githubusercontent.com/63364024/114675477-174c5d80-9d2a-11eb-9305-ab6a06fa2a09.png" alt="Owner Panel" width="100%">
+![image](https://user-images.githubusercontent.com/63364024/114681906-685f5000-9d30-11eb-9049-bf218cb06cc8.png)
 
-<img src="https://user-images.githubusercontent.com/63364024/114675501-1f0c0200-9d2a-11eb-9098-b0777a219f82.png" alt="Counter Panel" width="100%">
+![image](https://user-images.githubusercontent.com/63364024/114681945-7319e500-9d30-11eb-8089-3dc3e4ae5cb7.png)
 
-<img src="https://user-images.githubusercontent.com/63364024/114675522-26cba680-9d2a-11eb-886b-1472d041ee4a.png" alt="User Panel" width="100%">
+![image](https://user-images.githubusercontent.com/63364024/114681987-7dd47a00-9d30-11eb-8660-1b314774521e.png)
