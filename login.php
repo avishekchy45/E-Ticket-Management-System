@@ -17,7 +17,8 @@ include("includes/isloggedin.php");
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-    <title>ticket.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>LOGIN</title>
 </head>
 
 <body>
@@ -44,9 +45,7 @@ include("includes/isloggedin.php");
         <div class="row">
             <!-- MENU -->
             <div class="col-sm-2 text-left">
-                <?php
-                include("includes/menu.php");
-                ?>
+                
             </div>
             <!-- MAIN -->
             <div class="col-sm-8 text-center">

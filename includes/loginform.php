@@ -1,7 +1,7 @@
 <br>
 <h2>Please <a href="login.php">login</a> to book ticket</h2><br>
 <br>
-<form target="_self" enctype="multipart/form-data" method="POST">
+<form target="_self" enctype="multipart/form-data" method="POST" class="animate__animated animate__backInDown">
     <div class="col">
         <div class="form-group">
             <label for="usr">USER NAME</label>

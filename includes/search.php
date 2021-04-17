@@ -1,5 +1,5 @@
 <br>
-<form target="_self" enctype="multipart/form-data" method="POST">
+<form target="_self" enctype="multipart/form-data" method="POST" class="animate__animated animate__slideInRight animate__slower">
     <div class="col">
         <div class="form-group">
             <label for="depart">From</label>
