@@ -6,21 +6,21 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active" data-interval="900">
-            <img src="uploads/0.jpg" class="d-block w-100" alt="...">
+            <img src="uploads/0.jpg" class="d-block w-100" alt="ticket.com">
             <div class="carousel-caption d-none d-md-block">
                 <h5>আজই বুক করুন আপনার বাস টিকিট</h5>
                 <p>ঘরে বসেই আপনার কাঙ্ক্ষিত টিকিট বুক করতে ভিজিট করুন <a href="index.php">ticket.com</a></p>
             </div>
         </div>
         <div class="carousel-item" data-interval="900">
-            <img src="uploads/1.jpg" class="d-block w-100" alt="...">
+            <img src="uploads/1.jpg" class="d-block w-100" alt="ticket.com">
             <div class="carousel-caption d-none d-md-block">
                 <h5>আজই বুক করুন আপনার বাস টিকিট</h5>
                 <p>ঘরে বসেই আপনার কাঙ্ক্ষিত টিকিট বুক করতে ভিজিট করুন <a href="index.php">ticket.com</a></p>
             </div>
         </div>
         <div class="carousel-item" data-interval="900">
-            <img src="uploads/2.jpg" class="d-block w-100" alt="...">
+            <img src="uploads/2.jpg" class="d-block w-100" alt="ticket.com">
             <div class="carousel-caption d-none d-md-block">
                 <h5>আজই বুক করুন আপনার বাস টিকিট</h5>
                 <p>ঘরে বসেই আপনার কাঙ্ক্ষিত টিকিট বুক করতে ভিজিট করুন <a href="index.php">ticket.com</a></p>
