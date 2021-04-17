@@ -22,14 +22,14 @@ include("connection.php");
 
 <body>
     <!-- Carousel Header -->
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <?php
         include("includes/carouselheader.php");
         ?>
     </div>
 
     <!-- NAVBAR -->
-    <div class="container-fluid sticky-top">
+    <div class="container-fluid p-0 sticky-top">
         <div class="row">
             <div class="col-sm text-center">
                 <?php
@@ -62,7 +62,7 @@ include("connection.php");
     </div>
 
     <!-- FOOTER -->
-    <div class="container-fluid">
+    <div class="container-fluid p-0">
         <div class="row">
             <div class="col-sm">
                 <?php
