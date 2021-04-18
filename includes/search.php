@@ -59,7 +59,7 @@ if (isset($_POST['search'])) {
         <caption>List of Available Buses</caption>
         <thead class='thead-dark animate__animated animate__bounce animate__slower'>
         <tr>
-        <th>Bus details</th>
+        <th>Bus Details</th>
         <th>PRICE(TK)</th>
         <th>VIEW SEATS</th>
         </tr>
@@ -76,7 +76,7 @@ if (isset($_POST['search'])) {
             <form action='login.php?from=$from&to=$to' target='_self' enctype='multipart/form-data' method='POST'>
             <tbody class='animate__animated animate__flipInX animate__slower'>
             <tr>
-            <td class='text-left'>From: $from<br>To: $to<br>Class: $class<br>Company: $company<br>Date & Time: $time</td>
+            <td class='text-left'><b class='text-info'>$company</b> ($class)<br> <b>From:</b> $from<br> <b>To:</b> $to<br> <b>Departure Time:</b> <i class='text-info'>$time</i> </td>
             <td class='align-middle'>$price</td>
             <td class='align-middle'><button type='submit' class='btn btn-outline-secondary' value='GO' name='go'>GO</button></td>
             </tr>
