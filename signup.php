@@ -31,7 +31,7 @@ include("includes/isloggedin.php");
 
     <!-- NAVBAR -->
     <div class="container-fluid p-0 sticky-top">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-sm text-center">
                 <?php
                 include("includes/navbarhome.php");
@@ -64,7 +64,7 @@ include("includes/isloggedin.php");
 
     <!-- FOOTER -->
     <div class="container-fluid p-0">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-sm">
                 <?php
                 include("includes/footer.php");

@@ -7,7 +7,8 @@ if (mysqli_num_rows($r) == 0) {
     ";
 } else {
     echo "
-    <table class='table table-striped table-hover table-responsive-sm' id='booking'>
+    <table class='table table-striped table-hover table-responsive-sm' id='list'>
+    <caption>List of Available Buses</caption>
     <thead class='thead-dark'>
     <tr>
     <th>Bus Details</th>
@@ -27,7 +28,7 @@ if (mysqli_num_rows($r) == 0) {
         $row2 = mysqli_fetch_assoc($r2);
         $address = $row2['ADDRESS'];
         echo "
-        <form action='booking.php?bus=$bus' target='_self' enctype='multipart/form-data' method='POST'>
+        <form action='?bus=$bus&from=$from&to=$to' target='_self' enctype='multipart/form-data' method='POST'>
         <tbody>
         <tr>
         <td class='text-left'><b>Bus ID:</b> $bus <br> <b>From:</b> $from <br> <b>To:</b> $to <i class='text-info'>($address)</i> </td>
