@@ -13,7 +13,7 @@ if (isset($_SESSION['user'])) {
         <a class='nav-link active bg-secondary' href='resetpass.php'>Reset Password</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='list.php'>List of Owners</a>
+        <a class='nav-link active bg-secondary' href='ownerlist.php'>List of Owners</a>
       </li><br>
       <li class='nav-item'>
         <a class='nav-link active bg-secondary' href='../index.php'>Search Bus</a>
@@ -45,7 +45,7 @@ if (isset($_SESSION['user'])) {
     <br>
     <ul class='nav flex-column nav-pills nav-fill'>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='booking.php'>Book Ticket</a>
+        <a class='nav-link active bg-secondary' href='availablebus.php'>Available Bus</a>
       </li><br>
       <li class='nav-item'>
         <a class='nav-link active bg-secondary' href='../index.php'>Search Bus</a>
