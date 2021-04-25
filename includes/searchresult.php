@@ -13,7 +13,7 @@ if (isset($_POST['search'])) {
     $r = mysqli_query($con, $query);
     if (mysqli_num_rows($r) == 0) {
         echo "
-        <br><h6 class='text-danger'>NO BUS AVAILABLE NOW FROM $depart to $dest</h6><br>
+        <br><h6 class='alert alert-danger animate__animated animate__shakeX'>NO BUS AVAILABLE NOW FROM $depart to $dest</h6><br>
         ";
     } else {
         echo "
