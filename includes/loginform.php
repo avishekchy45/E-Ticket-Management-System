@@ -31,6 +31,6 @@ if (isset($_POST['login'])) {
         $_SESSION['login_status'] = "in";
         header("Location:$type/index.php");
     } else {
-        echo "<div class='text-danger'>Incorrect User Id or Password. If you are new user <a href='signup.php'>SIGNUP</a> to continue...<br></div>";
+        echo "<div class='alert alert-danger animate__animated animate__shakeX'>Incorrect User Id or Password.<br>If you are new user <a href='signup.php' class='alert-link'>SIGNUP</a> to continue...<br></div>";
     }
 }
