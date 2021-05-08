@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['go'])) {
-    $bus = $_GET['bus'];
+    $bus_id = $_GET['bus'];
     echo "
     <style>
     #searchform, list{
@@ -25,14 +25,10 @@ if (isset($_POST['go'])) {
     <label for='' class='col-sm-2 col-form-label'>SELECT SEAT</label>
     </div>
     ";
-    $query = "select * from seat where BUS_ID = '$bus'";
-    $r = mysqli_query($con, $query);
-    $row = mysqli_fetch_assoc($r);
-    $A = $row['A'];
-    $B = $row['B'];
-    $C = $row['C'];
-    $D = $row['D'];
-    for ($i = 1; $i <= $A; $i++) {
+    $query = "SELECT * FROM buslist WHERE BUS_ID = '$bus_id'";
+    $result = mysqli_query($con, $query);
+    $row = mysqli_fetch_assoc($result);
+    for ($i = 1; $i <= 8; $i++) {
         echo "
         <div class='col-sm-10'>
             <div class='form-check form-check-inline'>
