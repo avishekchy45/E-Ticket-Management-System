@@ -6,11 +6,11 @@
             <select class="form-control" id="depart" name="from" required>
                 <option value="">SELECT DEPARTURE CITY</option>
                 <?php
-                $sql = "select distinct DEPARTURE from bus";
-                $r = mysqli_query($con, $sql);
-                while ($row = mysqli_fetch_array($r)) {
-                    $departure = $row['DEPARTURE'];
-                    echo "<option value='$departure'>$departure</option>";
+                $query = "SELECT DISTINCT DEPART FROM busschedule";
+                $result = mysqli_query($con, $query);
+                while ($row = mysqli_fetch_array($result)) {
+                    $depart = $row['DEPART'];
+                    echo "<option value='$depart'>$depart</option>";
                 }
                 ?>
             </select>
@@ -22,11 +22,11 @@
             <select class="form-control" id="dest" name="to" required>
                 <option value="">SELECT DESTINATION CITY</option>
                 <?php
-                $sql = "select distinct DESTINATION from bus";
-                $r = mysqli_query($con, $sql);
-                while ($row = mysqli_fetch_array($r)) {
-                    $destination = $row['DESTINATION'];
-                    echo "<option value='$destination'>$destination</option>";
+                $query = "SELECT DISTINCT DEST FROM busschedule";
+                $result = mysqli_query($con, $query);
+                while ($row = mysqli_fetch_array($result)) {
+                    $dest = $row['DEST'];
+                    echo "<option value='$dest'>$dest</option>";
                 }
                 ?>
             </select>

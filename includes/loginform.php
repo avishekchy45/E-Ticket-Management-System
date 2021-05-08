@@ -1,5 +1,7 @@
 <br>
-<h2>Please <a href="login.php">login</a> to book ticket</h2><br>
+<h5>If You Are Not Our Registered User , Please <a class="badge badge-info" href='signup.php'>SIGN UP</a> to Book Ticket</h5><br>
+<h5>If You Are Already Registered User , Please <a class="badge badge-info" href='login.php'>LOG IN</a> to Continue</h5><br>
+<h1 class='text-info'>LOGIN HERE!</h1><br>
 <br>
 <form target="_self" enctype="multipart/form-data" method="POST" class="animate__animated animate__backInDown">
     <div class="col">
@@ -21,16 +23,16 @@ if (isset($_POST['login'])) {
     $id = $_POST['id'];
     $pass = $_POST['pass'];
 
-    $query = "select TYPE,ID,PASS from login where BINARY ID='$id' and BINARY PASS='$pass'";
-    $r = mysqli_query($con, $query);
-    if (mysqli_num_rows($r) > 0) {
-        $row = mysqli_fetch_array($r);
-        $type = $row['TYPE'];
+    $query = "SELECT UTYPE,ID,PASS FROM ulogin WHERE BINARY ID='$id' and BINARY PASS='$pass'";
+    $result = mysqli_query($con, $query);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_array($result);
+        $type = $row['UTYPE'];
         $_SESSION['user'] = $type;
         $_SESSION['user_id'] = $id;
         $_SESSION['login_status'] = "in";
         header("Location:$type/index.php");
     } else {
-        echo "<div class='alert alert-danger animate__animated animate__shakeX'>Incorrect User Id or Password.<br>If you are new user <a href='signup.php' class='alert-link'>SIGNUP</a> to continue...<br></div>";
+        echo "<div class='alert alert-danger animate__animated animate__shakeX'>Incorrect User Id or Password.<br>If you are new user <a href='signup.php' class='alert-link'>SIGN UP</a> to continue...<br></div>";
     }
 }

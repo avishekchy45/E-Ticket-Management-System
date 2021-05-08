@@ -9,9 +9,9 @@ if (isset($_POST['search'])) {
     ";
     $depart = $_POST['from'];
     $dest = $_POST['to'];
-    $query = "select * from schedule,bus,owner where schedule.BUS_ID = bus.BUS_ID and bus.DEPARTURE = '$depart' and bus.DESTINATION = '$dest' and bus.owner = owner.USERNAME order by TIME";
-    $r = mysqli_query($con, $query);
-    if (mysqli_num_rows($r) == 0) {
+    $query = "SELECT * FROM busschedule,buslist,busowner WHERE DEPART = '$depart' AND DEST = '$dest' AND busschedule.BUS_ID = buslist.BUS_ID AND buslist.OWNER = busowner.OWNER_ID ORDER BY DEPART_TIME";
+    $result = mysqli_query($con, $query);
+    if (mysqli_num_rows($result) == 0) {
         echo "
         <br><h6 class='alert alert-danger animate__animated animate__shakeX'>NO BUS AVAILABLE NOW FROM $depart to $dest</h6><br>
         ";
@@ -27,19 +27,18 @@ if (isset($_POST['search'])) {
         </tr>
         </thead>
         ";
-        while ($row = mysqli_fetch_array($r)) {
-            $from = $row['DEPARTURE'];
-            $to = $row['DESTINATION'];
-            $class = $row['CLASS'];
-            $time = $row['TIME'];
+        while ($row = mysqli_fetch_array($result)) {
+            $bus_id = $row['BUS_ID'];
+            $sche_id = $row['SCHEDULE_ID'];
+            $time = $row['DEPART_TIME'];
             $price = $row['PRICE'];
-            $company = $row['COMPANY_NAME'];
-            $bus = $row['BUS_ID'];
+            $class = $row['CLASS'];
+            $company = $row['COMPANY'];
             echo "
-            <form action='?bus=$bus&from=$from&to=$to' target='_self' enctype='multipart/form-data' method='POST'>
+            <form action='?bus=$bus_id&from=$depart&to=$dest' target='_self' enctype='multipart/form-data' method='POST'>
             <tbody class='animate__animated animate__flipInX animate__slower'>
             <tr>
-            <td class='text-left'><b class='text-info'>$company</b> ($class)<br> <b>From:</b> $from<br> <b>To:</b> $to<br> <b>Departure Time:</b> <i class='text-info'>$time</i> </td>
+            <td class='text-left'><b class='text-info'>$company</b> ($class)<br> <b>From:</b> $depart<br> <b>To:</b> $dest<br> <b>Departure Time:</b> <i class='text-info'>$time</i> </td>
             <td class='align-middle'>$price</td>
             <td class='align-middle'><button type='submit' class='btn btn-outline-secondary' value='GO' name='go'>GO</button></td>
             </tr>
@@ -47,9 +46,9 @@ if (isset($_POST['search'])) {
             </form>
             ";
         }
-        echo "
-        </table>
-        <br><a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
-        ";
     }
+    echo "
+    </table>
+    <br><a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
+    ";
 }
