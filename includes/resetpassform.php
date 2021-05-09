@@ -1,5 +1,5 @@
 <br>
-<h2>PASSWORD RESET IS NOT AVAILABLE NOW</h2><br>
+<h2 class='text-success'>PASSWORD RESET IS NOW AVAILABLE</h2>
 <br>
 <form target="_self" enctype="multipart/form-data" method="POST">
     <div class="col">
@@ -8,18 +8,22 @@
             <input type="text" class="form-control" id="usr" name="id" required>
         </div>
     </div>
-    <br><button type="submit" class="btn btn-outline-danger" value="REGISTER" name="register" disabled>RESET PASSWORD</button><br>
+    <br><button type="submit" class="btn btn-outline-danger" value="RESET" name="reset">RESET PASSWORD</button><br>
 </form>
 <br>
 
 <?php
 if (isset($_POST['reset'])) {
     $id = $_POST['id'];
-    $sql2 = "insert into login (TYPE,ID,PASS) values ('$type','$id','$pass')";
-
-    if (mysqli_query($con, $sql)) {
-        echo "<script>alert('Password Reset Successfull for this USERNAME( $id ). Go to login page to continue...')</script>";
+    $query = "SELECT PASS FROM ulogin WHERE ID='$id'";
+    $result = mysqli_query($con, $query);
+    
+    if (mysqli_num_rows($result) > 0) {
+        $query = "UPDATE ulogin SET PASS=DEFAULT(PASS) WHERE ID='$id'";
+        if (mysqli_query($con, $query)) {
+            echo "<div class='alert alert-success animate__animated animate__shakeX'> Password Reset of ID( $id ) is Successful! </div>";
+        }
     } else {
-        echo "<div class='text-danger'> Error! </div>" . mysqli_error($con);
+        echo "<div class='alert alert-danger animate__animated animate__shakeX'> User Not Found! </div>" . mysqli_error($con);
     }
 }

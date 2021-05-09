@@ -7,13 +7,13 @@ if (isset($_SESSION['user'])) {
     <br>
     <ul class='nav flex-column nav-pills nav-fill'>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='register.php'>Register Owner</a>
+        <a class='nav-link active bg-secondary' href='registerowner.php'>Register Owner</a>
+      </li><br>
+      <li class='nav-item'>
+        <a class='nav-link active bg-secondary' href='listofowners.php'>List of Owners</a>
       </li><br>
       <li class='nav-item'>
         <a class='nav-link active bg-secondary' href='resetpass.php'>Reset Password</a>
-      </li><br>
-      <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='ownerlist.php'>List of Owners</a>
       </li><br>
       <li class='nav-item'>
         <a class='nav-link active bg-secondary' href='../index.php'>Search Bus</a>
