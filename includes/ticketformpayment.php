@@ -1,3 +1,6 @@
+<br>
+<h2 class='text-danger'>TICKET BOOKING WITH ONLINE PAYMENT WILL BE AVAILABLE SOON</h2>
+<br>
 <?php
 if (isset($_POST['go'])) {
     $bus_id = $_GET['bus'];
@@ -8,7 +11,7 @@ if (isset($_POST['go'])) {
     }
     </style>
     <form action='printticket.php' target='_self' enctype='multipart/form-data' method='POST'>
-    <h3 class='text-info'>BOOK TICKET</h3><br>
+    <h1 class='text-info'>BOOK TICKET</h1><br>
     <div class='form-group row'>
     <label for='name' class='col-sm-2 col-form-label'>NAME</label>
     <div class='col-sm-10'>
@@ -39,8 +42,9 @@ if (isset($_POST['go'])) {
         ";
     }
     echo "
-    <br><button type='submit' class='btn btn-outline-info' value='CONFIRM' name='confirm'>CONFIRM TICKET</button>
+    <br><button type='submit' class='btn btn-outline-info' value='CONFIRM' name='confirm' disabled>CONFIRM TICKET</button>
     <a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
     </form>
+    <br>
     ";
 }

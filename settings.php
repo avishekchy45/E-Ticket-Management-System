@@ -25,14 +25,14 @@ include("includes/isloggedout.php");
 </head>
 
 <body>
-    <!-- Carousel Header -->
-    <div class="container-fluid">
+    <!-- Header -->
+    <div class="container-fluid p-0">
 
     </div>
 
     <!-- NAVBAR -->
-    <div class="container-fluid sticky-top">
-        <div class="row">
+    <div class="container-fluid sticky-top p-0">
+        <div class="row no-gutters">
             <div class="col-sm text-center">
                 <?php
                 include("includes/navbarhome.php");
@@ -64,8 +64,8 @@ include("includes/isloggedout.php");
     </div>
 
     <!-- FOOTER -->
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid p-0">
+        <div class="row no-gutters">
             <div class="col-sm">
                 <?php
                 include("includes/footer.php");

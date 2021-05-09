@@ -26,7 +26,7 @@ include("../includes/isadmin.php");
 </head>
 
 <body>
-    <!-- Carousel Header -->
+    <!-- Header -->
     <div class="container-fluid p-0">
 
     </div>
