@@ -1,7 +1,7 @@
 <br>
 <h5>If You Are Not Our Registered User , Please <a class="badge badge-info" href='signup.php'>SIGN UP</a> to Book Ticket</h5><br>
 <h5>If You Are Already Registered User , Please <a class="badge badge-info" href='login.php'>LOG IN</a> to Continue</h5><br>
-<h1 class='text-info'>LOGIN HERE!</h1><br>
+<h1 class='text-info'>LOGIN HERE!</h1>
 <br>
 <form target="_self" enctype="multipart/form-data" method="POST" class="animate__animated animate__backInDown">
     <div class="col">
