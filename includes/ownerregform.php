@@ -45,7 +45,7 @@ if (isset($_POST['register'])) {
     $acquery = "insert into busowner (OWNER_ID,NAME,COMPANY,CONTACT,REG_COUNTER) values ('$id','$owner','$company','$contact','$counter')";
 
     if (mysqli_query($con, $loginquery) && mysqli_query($con, $acquery)) {
-        echo "<script>alert('Successfully Registered USERNAME( $id ).')</script>";
+        echo "<script>alert('Successfully Registered OWNER ID( $id ).')</script>";
     } else {
         echo "<div class='text-danger'> Registration Error! </div>" . mysqli_error($con);
     }

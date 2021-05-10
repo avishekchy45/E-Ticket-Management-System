@@ -1,5 +1,5 @@
 <br>
-<h2>Register Your Counter</h2><br>
+<h1 class='text-info'>REGISTER YOUR COUNTER HERE!</h1>
 <br>
 <form target="_self" enctype="multipart/form-data" method="POST">
     <div class="col">
@@ -12,7 +12,7 @@
             <input type="text" class="form-control" id="address" name="address" required>
         </div>
         <div class="form-group">
-            <label for="usr">PHONE</label>
+            <label for="usr">PHONE NUMBER</label>
             <input type="tel" class="form-control" id="phone" name="phone">
         </div>
         <div class="form-group">
@@ -32,12 +32,13 @@ if (isset($_POST['register'])) {
     $pass = $_POST['pass'];
     $owner = "$user_id";
     $type = "counter";
-    $sql = "insert into counter (USERNAME,ADDRESS,OWNER,PHONE) values ('$id','$address','$owner','$phone')";
-    $sql2 = "insert into login (TYPE,ID,PASS) values ('$type','$id','$pass')";
+    $loginquery = "INSERT INTO ulogin (UTYPE,ID,PASS) VALUES ('$type','$id','$pass')";
+    $acquery = "INSERT INTO buscounter (COUNTER_ID,OWNER,ADDRESS,CONTACT) VALUES ('$id','$owner','$address','$phone')";
 
-    if (mysqli_query($con, $sql) && mysqli_query($con, $sql2)) {
-        echo "<script>alert('Successfully registered .Remember this USERNAME( $id ) for further login.')</script>";
+    if (mysqli_query($con, $loginquery) && mysqli_query($con, $acquery)) {
+        echo "<script>alert('Successfully Registered COUNTER ID( $id ).')</script>";
     } else {
-        echo "<div class='text-danger'> Registration error! </div>" . mysqli_error($con);
+        echo "<div class='text-danger'> Registration Error! </div>" . mysqli_error($con);
     }
+
 }
