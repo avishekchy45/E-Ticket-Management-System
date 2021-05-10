@@ -1,3 +1,3 @@
 <?php
-$con = mysqli_connect("localhost", "root", "", "ticket.com");
+$con = mysqli_connect("localhost", "root", "", "ticketdb");
 ?>
