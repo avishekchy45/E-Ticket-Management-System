@@ -2,6 +2,9 @@
     box-sizing: content-box;
 }
 
+
+/*Carousel Design*/
+
 .carousel-item {
     height: 450px;
     transition: transform 2s ease, opacity .5s ease-out
@@ -9,4 +12,25 @@
 
 .carousel-item img {
     height: 450px;
+}
+
+
+/*Scrollbar Design*/
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: #17a2b8;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.3) 20%, transparent 20%, transparent 40%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.3) 60%, transparent 60%, transparent 80%, rgba(255, 255, 255, 0.3) 80%);
+    border-radius: 0;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background-image: -webkit-linear-gradient(45deg, transparent 20%, rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0.3) 40%, transparent 40%, transparent 60%, rgba(255, 255, 255, 0.3) 60%, rgba(255, 255, 255, 0.3) 80%, transparent 80%);
 }
