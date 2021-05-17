@@ -57,7 +57,7 @@ if (isset($_POST['go'])) {
     }
     echo "
       <div class='form-check form-check-inline text-center'>
-      <input class='form-check-input busseat' type='checkbox' value='$seatnumber' id='seatno' name='choosedseat[]' onclick='changelabel()' $booked>
+      <input class='form-check-input busseat' type='checkbox' value='$seatnumber' id='seatno' name='choosedseat[]' onclick='changeprice(this);' $booked>
       <label class='form-check-label font-weight-bolder font-italic badge badge-dark $seatcolor' for='seatno' id='seatlabel'> <span>$seatnumber</span> </label>
       </div>
     ";
@@ -70,21 +70,27 @@ if (isset($_POST['go'])) {
   echo "
     <br>
     <div class='form-group row text-justify'>
+      <label for='totalprice' class='col-sm-2 col-form-label'>Total Price</label>
+      <div class='col-sm-10'>
+      <span id='totalprice'> You Must Select at Least One Seat </span>
+      </div>
+    </div> 
+    <div class='form-group row text-justify'>
       <label for='class' class='col-sm-2 col-form-label'>Class</label>
       <div class='col-sm-10'>
-      <input type='tel' class='form-control' id='class' name='class' value='$class' readonly>
+      <input type='text' class='form-control' id='class' name='class' value='$class' readonly>
       </div>
     </div>
     <div class='form-group row text-justify'>
       <label for='coach' class='col-sm-2 col-form-label'>Coach No</label>
       <div class='col-sm-10'>
-      <input type='tel' class='form-control' id='coach' name='coach' value='$coach' readonly>
+      <input type='text' class='form-control' id='coach' name='coach' value='$coach' readonly>
       </div>
     </div>
     <div class='form-group row text-justify'>
       <label for='price' class='col-sm-2 col-form-label'>Price(Per Ticket)</label>
       <div class='col-sm-10'>
-      <input type='tel' class='form-control' id='price' name='price' value='$price' readonly>
+      <input type='text' class='form-control' id='price' name='price' value='$price' readonly>
       </div>
     </div>
     <br>
@@ -140,4 +146,15 @@ if (isset($_POST['confirm'])) {
       }
     });
   });
+
+  var total = 0;
+
+  function changeprice(item) {
+    if (item.checked) {
+      total += <?php echo $price ?>;
+    } else {
+      total -= <?php echo $price ?>;
+    }
+    document.getElementById('totalprice').innerHTML = total + " /=";
+  }
 </script>
