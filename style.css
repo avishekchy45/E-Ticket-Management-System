@@ -62,7 +62,7 @@ input.busseat[type="checkbox"],
 input.busseat[type="checkbox"]+label {
     width: 35px;
     height: 45px;
-    font-size: small;
+    font-size: inherit;
 }
 
 input.busseat[type="checkbox"]:checked+label:after {
