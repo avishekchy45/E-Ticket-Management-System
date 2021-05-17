@@ -6,7 +6,7 @@
             <select class="form-control" id="depart" name="from" required>
                 <option value="">SELECT DEPARTURE CITY</option>
                 <?php
-                $query = "SELECT DISTINCT DEPART FROM busschedule";
+                $query = "SELECT DISTINCT DEPART FROM busschedule ORDER BY DEPART";
                 $result = mysqli_query($con, $query);
                 while ($row = mysqli_fetch_array($result)) {
                     $depart = $row['DEPART'];
@@ -22,7 +22,7 @@
             <select class="form-control" id="dest" name="to" required>
                 <option value="">SELECT DESTINATION CITY</option>
                 <?php
-                $query = "SELECT DISTINCT DEST FROM busschedule";
+                $query = "SELECT DISTINCT DEST FROM busschedule ORDER BY DEST";
                 $result = mysqli_query($con, $query);
                 while ($row = mysqli_fetch_array($result)) {
                     $dest = $row['DEST'];

@@ -1,5 +1,5 @@
 <?php
-$query = "SELECT * FROM busschedule,buslist WHERE DEPART_COUNTER = '$user_id' and busschedule.Bus_ID=buslist.Bus_ID";
+$query = "SELECT * FROM busschedule,buslist,busowner WHERE DEPART_COUNTER = '$user_id' and busschedule.Bus_ID=buslist.Bus_ID AND buslist.OWNER = busowner.OWNER_ID ORDER BY DEPART_TIME";
 $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) == 0) {
     echo "
@@ -19,19 +19,24 @@ if (mysqli_num_rows($result) == 0) {
     ";
     while ($row = mysqli_fetch_array($result)) {
         $bus_id = $row['BUS_ID'];
-        $from = $row['DEPART_COUNTER'];
-        $to = $row['DEST_COUNTER'];
+        $schedule_id = $row['SCHEDULE_ID'];
+        $depart = $row['DEPART'];
+        $dest = $row['DEST'];
+        $departcounter = $row['DEPART_COUNTER'];
+        $destcounter = $row['DEST_COUNTER'];
         $time = $row['DEPART_TIME'];
         $price = $row['PRICE'];
-        $query2 = "SELECT ADDRESS FROM buscounter WHERE COUNTER_ID = '$to'";
-        $r2 = mysqli_query($con, $query2);
-        $row2 = mysqli_fetch_assoc($r2);
+        $class = $row['CLASS'];
+        $company = $row['COMPANY'];
+        $query2 = "SELECT ADDRESS FROM buscounter WHERE COUNTER_ID = '$destcounter'";
+        $result2 = mysqli_query($con, $query2);
+        $row2 = mysqli_fetch_assoc($result2);
         $address = $row2['ADDRESS'];
         echo "
-        <form action='?bus=$bus_id' target='_self' enctype='multipart/form-data' method='POST'>
+        <form action='?schedule=$schedule_id&bus=$bus_id' target='_self' enctype='multipart/form-data' method='POST'>
         <tbody>
         <tr>
-        <td class='text-left'><b>Bus ID:</b> $bus_id <br> <b>From:</b> $from <br> <b>To:</b> $to <i class='text-info'>($address)</i> </td>
+        <td class='text-left'><b class='text-info'>$company</b> ($class)<br> <b>From:</b> $depart<br> <b>To:</b> $dest ($address)<br> <b>Departure Time:</b> <i class='text-info'>$time</i> </td>
         <td class='align-middle'>$price</td>
         <td class='align-middle'><button type='submit' class='btn btn-outline-secondary' value='GO' name='go'>GO</button></td>
         </tr>
