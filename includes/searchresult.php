@@ -29,16 +29,22 @@ if (isset($_POST['search'])) {
         ";
         while ($row = mysqli_fetch_array($result)) {
             $bus_id = $row['BUS_ID'];
-            $sche_id = $row['SCHEDULE_ID'];
+            $schedule_id = $row['SCHEDULE_ID'];
+            $departcounter = $row['DEPART_COUNTER'];
+            $destcounter = $row['DEST_COUNTER'];
             $time = $row['DEPART_TIME'];
             $price = $row['PRICE'];
             $class = $row['CLASS'];
             $company = $row['COMPANY'];
+            $query2 = "SELECT ADDRESS FROM buscounter WHERE COUNTER_ID = '$departcounter'";
+            $result2 = mysqli_query($con, $query2);
+            $row2 = mysqli_fetch_assoc($result2);
+            $address = $row2['ADDRESS'];
             echo "
-            <form action='?bus=$bus_id&from=$depart&to=$dest' target='_self' enctype='multipart/form-data' method='POST'>
+            <form action='?schedule=$schedule_id&bus=$bus_id' target='_self' enctype='multipart/form-data' method='POST'>
             <tbody class='animate__animated animate__flipInX animate__slower'>
             <tr>
-            <td class='text-left'><b class='text-info'>$company</b> ($class)<br> <b>From:</b> $depart<br> <b>To:</b> $dest<br> <b>Departure Time:</b> <i class='text-info'>$time</i> </td>
+            <td class='text-left'><b class='text-info'>$company</b> ($class)<br> <b>From:</b> $depart ($address)<br> <b>To:</b> $dest<br> <b>Departure Time:</b> <i class='text-info'>$time</i> </td>
             <td class='align-middle'>$price</td>
             <td class='align-middle'><button type='submit' class='btn btn-outline-secondary' value='GO' name='go'>GO</button></td>
             </tr>

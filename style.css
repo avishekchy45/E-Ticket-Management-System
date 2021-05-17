@@ -2,6 +2,9 @@
     box-sizing: content-box;
 }
 
+
+/*Carousel Design*/
+
 .carousel-item {
     height: 450px;
     transition: transform 2s ease, opacity .5s ease-out
@@ -9,4 +12,59 @@
 
 .carousel-item img {
     height: 450px;
+}
+
+
+/*Scrollbar Design*/
+
+ ::-webkit-scrollbar {
+    width: 15px;
+}
+
+ ::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background-color: #17a2b8;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.3) 20%, transparent 20%, transparent 40%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.3) 60%, transparent 60%, transparent 80%, rgba(255, 255, 255, 0.3) 80%);
+    border-radius: 0;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background-image: -webkit-linear-gradient(45deg, transparent 20%, rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0.3) 40%, transparent 40%, transparent 60%, rgba(255, 255, 255, 0.3) 60%, rgba(255, 255, 255, 0.3) 80%, transparent 80%);
+}
+
+
+/*Background Design*/
+
+body {
+    background: #8e9eab;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #eef2f3, #8e9eab);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+/*Bus Seat Checkbox Design*/
+
+.booked {
+    color: #ff0000 !important;
+}
+
+.available {
+    color: #17a2b8;
+}
+
+input.busseat[type="checkbox"],
+input.busseat[type="checkbox"]+label {
+    width: 35px;
+    height: 45px;
+    font-size: small;
+}
+
+input.busseat[type="checkbox"]:checked+label:after {
+    content: "💺";
 }

@@ -11,7 +11,7 @@ echo "
         <div class='collapse navbar-collapse' id='collapsibleNavbar'>
             <ul class='navbar-nav'>
                 <li class='nav-item'>
-                    <a class='nav-link' href='#'> This is $user account. </a>
+                    <a class='nav-link text-uppercase' href='#'> This is $user account </a>
                 </li>
                 <li class='nav-item dropdown'>
                     <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'> $user_id </a>

@@ -1,6 +1,9 @@
 <?php
 session_start();
+$type = $_SESSION['user'];
+$user_id = $_SESSION['user_id'];
 include("connection.php");
+include("includes/isuser.php");
 ?>
 
 <!DOCTYPE html>
@@ -15,29 +18,31 @@ include("connection.php");
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="logo.png" />
     <title>PRINT TICKET</title>
 </head>
 
 <body>
-    <!-- Carousel Header -->
+    <!-- Header -->
     <div class="container-fluid p-0">
-        
+
     </div>
 
     <!-- NAVBAR -->
-    <div class="container-fluid p-0 sticky-top">
-        <div class="row">
+    <div class="container-fluid sticky-top p-0">
+        <div class="row no-gutters">
             <div class="col-sm text-center">
-                
+                <?php
+                include("includes/navbarhome.php");
+                ?>
             </div>
         </div>
     </div>
 
     <!-- MENU,MAIN,SIDEBAR -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <!-- MENU -->
             <div class="col-sm-2 text-left">
@@ -45,25 +50,30 @@ include("connection.php");
             </div>
             <!-- MAIN -->
             <div class="col-sm-8 text-center">
-                
-
-
+                <?php
+                include("includes/ticket.php");
+                ?>
             </div>
             <!-- SIDEBAR -->
             <div class="col-sm-2 text-right">
-                
+                <?php
+                include("includes/sidebar.php");
+                ?>
             </div>
         </div>
     </div>
 
     <!-- FOOTER -->
     <div class="container-fluid p-0">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-sm">
-                
+                <?php
+                include("includes/footer.php");
+                ?>
             </div>
         </div>
     </div>
+
 
 </body>
 

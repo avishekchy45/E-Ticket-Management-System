@@ -12,8 +12,18 @@
             <input type="text" class="form-control" id="class" name="class">
         </div>
         <div class="form-group">
-            <label for="seat">SEAT</label>
-            <input type="number" class="form-control" id="seat" name="seat" required>
+            <label for="seat">SEAT TYPE</label>
+            <select class="form-control" id="seat" name="seat" required>
+                <option value="">SELECT SEAT TYPE</option>
+                <?php
+                $query = "SELECT SEAT_TYPE FROM busseatlist";
+                $result = mysqli_query($con, $query);
+                while ($row = mysqli_fetch_array($result)) {
+                    $type = $row['SEAT_TYPE'];
+                    echo "<option value='$type'>$type</option>";
+                }
+                ?>
+            </select>
         </div>
     </div>
     <br><button type="submit" class="btn btn-outline-warning" value="ADD" name="add">ADD BUS</button><br>
@@ -27,7 +37,7 @@ if (isset($_POST['add'])) {
     $class = $_POST['class'];
     $seat = $_POST['seat'];
     $bus_id = "$owner" . '-' . "$coach";
-    $query = "INSERT INTO buslist (BUS_ID,OWNER,COACH_NO,CLASS,SEAT) VALUES ('$bus_id','$owner','$coach','$class','$seat')";
+    $query = "INSERT INTO buslist (BUS_ID,OWNER,COACH_NO,CLASS,SEAT_TYPE) VALUES ('$bus_id','$owner','$coach','$class','$seat')";
 
     if (mysqli_query($con, $query)) {
         echo "<script>alert('Successfully Added Bus ( $bus_id )')</script>";
