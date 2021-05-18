@@ -21,6 +21,8 @@ if (!isset($_SESSION['user'])) {
                         <a class='dropdown-item' href='index.php'>Bus</a>
                         <a class='dropdown-item' href='index.php'>Train</a>
                         <a class='dropdown-item' href='index.php'>Air</a>
+                        <a class='dropdown-item' href='index.php'>Launch</a>
+                        <a class='dropdown-item' href='index.php'>Movie</a>
                         <a class='dropdown-item' href='index.php'>Hotel</a>
                     </div>
                 </li>

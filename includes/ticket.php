@@ -1,24 +1,25 @@
 <?php
-$ticket_id = $_GET['ticket'];
-$query = "SELECT ticket.REG,ticket.SCHEDULE_ID,SEAT,ticket.NAME,ticket.CONTACT,BOOKED_BY,busschedule.BUS_ID,DEPART,DEST,DEPART_TIME,ticket.PRICE,CLASS,COACH_NO,COMPANY FROM ticket,busschedule,buslist,busowner WHERE TICKET_ID = '$ticket_id' AND ticket.SCHEDULE_ID = busschedule.SCHEDULE_ID AND busschedule.BUS_ID = buslist.BUS_ID AND buslist.OWNER = busowner.OWNER_ID";
-$result = mysqli_query($con, $query);
-$row = mysqli_fetch_array($result);
-$reg = $row['REG'];
-//$schedule = $row['SCHEDULE_ID'];
-$name = $row['NAME'];
-$contact = $row['CONTACT'];
-$booked = $row['BOOKED_BY'];
-$bus = $row['BUS_ID'];
-$depart = $row['DEPART'];
-$dest = $row['DEST'];
-$time = $row['DEPART_TIME'];
-$price = $row['PRICE'];
-$class = $row['CLASS'];
-$coach = $row['COACH_NO'];
-$company = $row['COMPANY'];
-$seat =  $row['SEAT'];
+if (isset($_GET['ticket'])) {
+  $ticket_id = $_GET['ticket'];
+  $query = "SELECT ticket.REG,ticket.SCHEDULE_ID,SEAT,ticket.NAME,ticket.CONTACT,BOOKED_BY,busschedule.BUS_ID,DEPART,DEST,DEPART_TIME,ticket.PRICE,CLASS,COACH_NO,COMPANY FROM ticket,busschedule,buslist,busowner WHERE TICKET_ID = '$ticket_id' AND ticket.SCHEDULE_ID = busschedule.SCHEDULE_ID AND busschedule.BUS_ID = buslist.BUS_ID AND buslist.OWNER = busowner.OWNER_ID";
+  $result = mysqli_query($con, $query);
+  $row = mysqli_fetch_array($result);
+  $reg = $row['REG'];
+  //$schedule = $row['SCHEDULE_ID'];
+  $name = $row['NAME'];
+  $contact = $row['CONTACT'];
+  $booked = $row['BOOKED_BY'];
+  $bus = $row['BUS_ID'];
+  $depart = $row['DEPART'];
+  $dest = $row['DEST'];
+  $time = $row['DEPART_TIME'];
+  $price = $row['PRICE'];
+  $class = $row['CLASS'];
+  $coach = $row['COACH_NO'];
+  $company = $row['COMPANY'];
+  $seat =  $row['SEAT'];
 
-echo "
+  echo "
   <style>
   
   </style>      
@@ -97,6 +98,7 @@ echo "
     <br><button type='submit' class='btn btn-outline-info' value='PRINT' name='print' id='confirm' onclick='PrintTicket();'>PRINT TICKET</button>
   </div>
 ";
+}
 ?>
 <script type="text/javascript">
   function PrintTicket() {

@@ -53,5 +53,33 @@ if (isset($_SESSION['user'])) {
     </ul>
     <br>
     ";
+  } else if ($user == 'user') {
+    echo "  
+    <br>
+    <ul class='nav flex-column nav-pills nav-fill'>
+      <li class='nav-item'>
+        <a class='nav-link active bg-info' href='bookedbustickets.php'>Booked Bus Tickets</a>
+      </li><br>
+      <li class='nav-item'>
+        <a class='nav-link active bg-secondary' href='../index.php'>Book Bus Ticket</a>
+      </li><br>
+      <li class='nav-item'>
+        <a class='nav-link active bg-secondary' href='../index.php'>Book Train Ticket</a>
+      </li><br>
+      <li class='nav-item'>
+        <a class='nav-link active bg-secondary' href='../index.php'>Book Air Ticket</a>
+      </li><br>
+      <li class='nav-item'>
+        <a class='nav-link active bg-secondary' href='../index.php'>Book Launch Ticket</a>
+      </li><br>
+      <li class='nav-item'>
+        <a class='nav-link active bg-secondary' href='../index.php'>Book Movie Ticket</a>
+      </li><br>
+      <li class='nav-item'>
+        <a class='nav-link active bg-secondary' href='../index.php'>Book Hotel</a>
+      </li><br>
+    </ul>
+    <br>
+    ";
   }
 }
