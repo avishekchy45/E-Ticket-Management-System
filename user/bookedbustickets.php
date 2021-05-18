@@ -54,7 +54,7 @@ include("../includes/isgeneraluser.php");
             <!-- MAIN -->
             <div class="col-sm-8 text-center">
                 <?php
-                include("../includes/guserhome.php");
+                include("../includes/userticketlist.php");
                 ?>
             </div>
             <!-- SIDEBAR -->

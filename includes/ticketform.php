@@ -102,8 +102,8 @@ if (isset($_POST['go'])) {
 }
 if (isset($_POST['confirm'])) {
   $counter = "$user_id";
-  $schedule_id = "$schedule_id";
-  $bus_id = "$bus_id";
+  $schedule_id = $_GET['schedule'];
+  $bus_id = $_GET['bus'];
   $class = $_POST['class'];
   $coach = $_POST['coach'];
   $name = $_POST['name'];
@@ -136,6 +136,7 @@ if (isset($_POST['confirm'])) {
     echo ("<script>location.href = '../printticket.php?ticket=$ticket_id';</script>");
 }
 ?>
+
 <script type="text/javascript">
   $(document).ready(function() {
     $('#confirm').click(function() {
