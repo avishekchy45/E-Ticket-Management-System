@@ -16,7 +16,7 @@ if (isset($_SESSION['user'])) {
         <a class='nav-link active bg-secondary' href='resetpass.php'>Reset Password</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php'>Search Bus</a>
+        <a class='nav-link active bg-secondary' href='../'>Search Bus</a>
       </li><br>
     </ul>
     <br>
@@ -35,7 +35,7 @@ if (isset($_SESSION['user'])) {
         <a class='nav-link active bg-secondary' href='schedule.php'>Schedule Bus</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php'>Search Bus</a>
+        <a class='nav-link active bg-secondary' href='../'>Search Bus</a>
       </li><br>
     </ul>
     <br>
@@ -48,7 +48,7 @@ if (isset($_SESSION['user'])) {
         <a class='nav-link active bg-secondary' href='availablebus.php'>Available Bus</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php'>Search Bus</a>
+        <a class='nav-link active bg-secondary' href='../'>Search Bus</a>
       </li><br>
     </ul>
     <br>
@@ -61,22 +61,22 @@ if (isset($_SESSION['user'])) {
         <a class='nav-link active bg-info' href='bookedbustickets.php'>Booked Bus Tickets</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php'>Book Bus Ticket</a>
+        <a class='nav-link active bg-secondary' href='../'>Book Bus Ticket</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php'>Book Train Ticket</a>
+        <a class='nav-link active bg-secondary' href='../'>Book Train Ticket</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php'>Book Air Ticket</a>
+        <a class='nav-link active bg-secondary' href='../'>Book Air Ticket</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php'>Book Launch Ticket</a>
+        <a class='nav-link active bg-secondary' href='../'>Book Launch Ticket</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php'>Book Movie Ticket</a>
+        <a class='nav-link active bg-secondary' href='../'>Book Movie Ticket</a>
       </li><br>
       <li class='nav-item'>
-        <a class='nav-link active bg-secondary' href='../index.php'>Book Hotel</a>
+        <a class='nav-link active bg-secondary' href='../'>Book Hotel</a>
       </li><br>
     </ul>
     <br>

@@ -1,3 +1,13 @@
+<?php
+date_default_timezone_set('Asia/Dhaka');
+$mindate=date("Y-m-d");
+$mintime=date("h:i");
+$min=$mindate."T".$mintime;
+$maxdate=date("Y-m-d", strtotime("+10 Days"));
+$maxtime=date("h:i");
+$max=$maxdate."T".$maxtime;
+//$max=date("Y-m-d h:i:sa", strtotime("+10 Days"));
+?>
 <br>
 <h1 class='text-info'>SCHEDULE YOUR BUSES HERE!</h1>
 <br>
@@ -71,11 +81,11 @@
         </div>
         <div class="form-group">
             <label for="time">DEPARTURE TIME</label>
-            <input type="datetime-local" class="form-control" id="time" name="time" required>
+            <input type="datetime-local" class="form-control" id="time" name="time" min=<?php echo"$min"?> max=<?php echo"$max"?> required>
         </div>
         <div class="form-group">
             <label for="price">PRICE(TK)</label>
-            <input type="number" class="form-control" id="price" name="price">
+            <input type="number" class="form-control" id="price" name="price" required>
         </div>
     <br><button type="submit" class="btn btn-outline-warning" value="ADD" name="add">ADD BUS</button><br>
 </form>

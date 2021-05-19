@@ -22,7 +22,8 @@
 if (isset($_POST['login'])) {
     $id = $_POST['id'];
     $pass = $_POST['pass'];
-
+    $pass = md5($pass);
+    
     $query = "SELECT UTYPE,ID,PASS FROM ulogin WHERE BINARY ID='$id' and BINARY PASS='$pass'";
     $result = mysqli_query($con, $query);
     if (mysqli_num_rows($result) > 0) {

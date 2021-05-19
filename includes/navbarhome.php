@@ -10,10 +10,10 @@ if (!isset($_SESSION['user'])) {
         <div class='collapse navbar-collapse' id='collapsibleNavbar'>
             <ul class='navbar-nav'>
                 <li class='nav-item'>
-                    <a class='nav-link' href='login.php'> LOGIN </a>
+                    <a class='nav-link' href='login'> LOGIN </a>
                 </li>
                 <li class='nav-item'>
-                    <a class='nav-link' href='signup.php'> SIGNUP </a>
+                    <a class='nav-link' href='signup'> SIGNUP </a>
                 </li>
                 <li class='nav-item dropdown'>
                     <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'>Book Ticket</a>
@@ -49,8 +49,8 @@ if (!isset($_SESSION['user'])) {
                     <li class='nav-item dropdown'>
                         <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'> $user_id </a>
                         <div class='dropdown-menu'>
-                            <a class='dropdown-item' href='$user/index.php'>Home</a>
-                            <a class='dropdown-item' href='settings.php'>Settings</a>
+                            <a class='dropdown-item' href='$user/'>Home</a>
+                            <a class='dropdown-item' href='settings'>Settings</a>
                             <a class='dropdown-item text-danger' href='?logout'>LOG OUT</a>
                         </div>
                     </li>

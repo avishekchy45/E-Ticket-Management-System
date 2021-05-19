@@ -1,3 +1,17 @@
+<?php
+$query = "SELECT MAX_COUNTER FROM busowner WHERE OWNER_ID='$user_id'";
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_array($result);
+$maxcounter = $row['MAX_COUNTER'];
+$query = "SELECT count(COUNTER_ID) AS REG_COUNTER FROM buscounter WHERE OWNER='$user_id'";
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_array($result);
+$regcounter = $row['REG_COUNTER'];
+if ($regcounter >= $maxcounter)
+    $newregister = "disabled";
+else
+    $newregister = $maxcounter - $regcounter;
+?>
 <br>
 <h1 class='text-info'>REGISTER YOUR COUNTER HERE!</h1>
 <br>
@@ -13,18 +27,23 @@
         </div>
         <div class="form-group">
             <label for="usr">PHONE NUMBER</label>
-            <input type="tel" class="form-control" id="phone" name="phone">
+            <input type="tel" class="form-control" id="phone" name="phone" required>
         </div>
         <div class="form-group">
             <label for="pwd">PASSWORD</label>
             <input type="password" class="form-control" id="pwd" name="pass" required>
         </div>
     </div>
-    <br><button type="submit" class="btn btn-outline-warning" value="REGISTER" name="register">REGISTER</button><br>
+    <br><button type="submit" class="btn btn-outline-warning" value="REGISTER" name="register" <?php echo "$newregister"; ?>>REGISTER</button><br>
 </form>
 <br>
 
 <?php
+if ($newregister == "disabled") {
+    echo "<div class='alert alert-danger animate__animated animate__shakeX'>You have reached maximum number of counters. Contact ADMIN for excedding your counter limits. <br></div>";
+} else {
+    echo "<div class='alert alert-success animate__animated animate__shakeX'>YOU CAN REGISTER $newregister COUNTER/S MORE. <br></div>";
+}
 if (isset($_POST['register'])) {
     $id = $_POST['id'];
     $address = $_POST['address'];
@@ -32,6 +51,7 @@ if (isset($_POST['register'])) {
     $pass = $_POST['pass'];
     $owner = "$user_id";
     $type = "counter";
+    $pass = md5($pass);
     $loginquery = "INSERT INTO ulogin (UTYPE,ID,PASS) VALUES ('$type','$id','$pass')";
     $acquery = "INSERT INTO buscounter (COUNTER_ID,OWNER,ADDRESS,CONTACT) VALUES ('$id','$owner','$address','$phone')";
 
@@ -40,5 +60,4 @@ if (isset($_POST['register'])) {
     } else {
         echo "<div class='text-danger'> Registration Error! </div>" . mysqli_error($con);
     }
-
 }

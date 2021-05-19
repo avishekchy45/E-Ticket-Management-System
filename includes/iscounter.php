@@ -1,5 +1,5 @@
 <?php
 if ($type != 'counter') {
-    echo("<script>location.href = '../login.php';</script>");
+    echo("<script>location.href = '../login';</script>");
 }
 ?>
