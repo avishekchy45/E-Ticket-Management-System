@@ -29,7 +29,7 @@ if (isset($_POST['go'])) {
     <label for='' class='col-sm-2 col-form-label'>SELECT SEAT</label>
   </div>
   ";
-  $query = "SELECT * FROM busseatlist,buslist,busschedule WHERE buslist.BUS_ID = '$bus_id' AND buslist.SEAT_TYPE=busseatlist.SEAT_TYPE AND buslist.BUS_ID=busschedule.BUS_ID";
+  $query = "SELECT * FROM busseatlist,buslist,busschedule WHERE buslist.BUS_ID = '$bus_id' AND busschedule.SCHEDULE_ID='$schedule_id' AND buslist.SEAT_TYPE=busseatlist.SEAT_TYPE AND buslist.BUS_ID=busschedule.BUS_ID";
   $result = mysqli_query($con, $query);
   $row = mysqli_fetch_array($result);
   $seat = explode(",", $row['SEAT']);

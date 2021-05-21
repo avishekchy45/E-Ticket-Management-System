@@ -1,5 +1,5 @@
 <?php
-$query = "SELECT * FROM busschedule,buslist,busowner WHERE DEPART_COUNTER = '$user_id' and busschedule.Bus_ID=buslist.Bus_ID AND buslist.OWNER = busowner.OWNER_ID AND DEPART_TIME >= NOW() ORDER BY DEPART_TIME";
+$query = "SELECT * FROM busschedule,buslist,busowner,departlist WHERE DEPART_COUNTER = '$user_id' AND departlist.SCHEDULE_ID=busschedule.SCHEDULE_ID AND busschedule.Bus_ID=buslist.Bus_ID AND buslist.OWNER = busowner.OWNER_ID AND DEPART_TIME >= NOW() ORDER BY DEPART_TIME";
 $result = mysqli_query($con, $query);
 if (mysqli_num_rows($result) == 0) {
     echo "

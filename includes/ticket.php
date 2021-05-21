@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET['ticket'])) {
   $ticket_id = $_GET['ticket'];
-  $query = "SELECT ticket.REG,ticket.SCHEDULE_ID,SEAT,ticket.NAME,ticket.CONTACT,BOOKED_BY,busschedule.BUS_ID,DEPART,DEST,DEPART_TIME,ticket.PRICE,CLASS,COACH_NO,COMPANY FROM ticket,busschedule,buslist,busowner WHERE TICKET_ID = '$ticket_id' AND ticket.SCHEDULE_ID = busschedule.SCHEDULE_ID AND busschedule.BUS_ID = buslist.BUS_ID AND buslist.OWNER = busowner.OWNER_ID";
+  $query = "SELECT ticket.REG,ticket.SCHEDULE_ID,SEAT,ticket.NAME,ticket.CONTACT,BOOKED_BY,busschedule.BUS_ID,DEPART,DEST,DEPART_TIME,ticket.PRICE,CLASS,COACH_NO,COMPANY FROM ticket,busschedule,buslist,busowner,departlist WHERE TICKET_ID = '$ticket_id' AND ticket.SCHEDULE_ID = busschedule.SCHEDULE_ID AND busschedule.BUS_ID = buslist.BUS_ID AND buslist.OWNER = busowner.OWNER_ID";
   $result = mysqli_query($con, $query);
   $row = mysqli_fetch_array($result);
   $reg = $row['REG'];

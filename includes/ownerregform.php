@@ -16,8 +16,8 @@
             <input type="text" class="form-control" id="contact" name="contact" required>
         </div>
         <div class="form-group">
-            <label for="usr">NUMBER OF COUNTER</label>
-            <input type="number" class="form-control" id="counter" name="counter" required>
+            <label for="usr">NUMBER OF MAXIMUM COUNTER</label>
+            <input type="number" class="form-control" id="maxcounter" name="maxcounter" required>
         </div>
         <div class="form-group">
             <label for="usr">USER NAME</label>
@@ -39,10 +39,11 @@ if (isset($_POST['register'])) {
     $id = $_POST['id'];
     $pass = $_POST['pass'];
     $contact = $_POST['contact'];
-    $counter = $_POST['counter'];    
+    $maxcounter = $_POST['maxcounter'];    
     $utype = "owner";
+    $pass = md5($pass);
     $loginquery = "INSERT INTO ulogin (UTYPE,ID,PASS) VALUES ('$utype','$id','$pass')";
-    $acquery = "insert into busowner (OWNER_ID,NAME,COMPANY,CONTACT,REG_COUNTER) values ('$id','$owner','$company','$contact','$counter')";
+    $acquery = "insert into busowner (OWNER_ID,NAME,COMPANY,CONTACT,MAX_COUNTER) values ('$id','$owner','$company','$contact','$maxcounter')";
 
     if (mysqli_query($con, $loginquery) && mysqli_query($con, $acquery)) {
         echo "<script>alert('Successfully Registered OWNER ID( $id ).')</script>";

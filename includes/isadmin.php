@@ -1,5 +1,5 @@
 <?php
 if ($type != 'admin') {
-    echo("<script>location.href = '../login.php';</script>");
+    echo("<script>location.href = '../login';</script>");
 }
 ?>

@@ -58,13 +58,21 @@ body {
     color: #17a2b8;
 }
 
-input.busseat[type="checkbox"],
-input.busseat[type="checkbox"]+label {
+input[type="checkbox"].busseat,
+input[type="checkbox"].busseat+label {
     width: 35px;
     height: 45px;
     font-size: inherit;
 }
 
-input.busseat[type="checkbox"]:checked+label:after {
+input[type="checkbox"].busseat:checked+label:after {
     content: "💺";
+}
+
+input[type="checkbox"].departcounter:checked+label {
+    color: #8e9eab;
+}
+
+input[type="checkbox"].departcounter:checked+label:after {
+    content: "✅";
 }
