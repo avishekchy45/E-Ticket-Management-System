@@ -32,7 +32,7 @@ if (isset($_POST['login'])) {
         $_SESSION['user'] = $type;
         $_SESSION['user_id'] = $id;
         $_SESSION['login_status'] = "in";
-        header("Location:$type/index.php");
+        header("Location:$type/");
     } else {
         echo "<div class='alert alert-danger animate__animated animate__shakeX'>Incorrect User Id or Password.<br>If you are new user <a href='signup.php' class='alert-link'>SIGN UP</a> to continue...<br></div>";
     }

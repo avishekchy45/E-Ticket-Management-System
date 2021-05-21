@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2021 at 10:24 PM
+-- Generation Time: May 21, 2021 at 04:38 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -37,9 +37,10 @@ CREATE TABLE `bookedseat` (
 --
 
 INSERT INTO `bookedseat` (`TICKET_ID`, `SEAT`) VALUES
-('427068569', 'H1'),
-('576975911', 'H2'),
-('576975911', 'H3');
+('726635886', 'D3'),
+('726635886', 'D4'),
+('858349108', 'C3'),
+('858349108', 'C4');
 
 -- --------------------------------------------------------
 
@@ -60,14 +61,10 @@ CREATE TABLE `buscounter` (
 --
 
 INSERT INTO `buscounter` (`REG`, `COUNTER_ID`, `OWNER`, `ADDRESS`, `CONTACT`) VALUES
-('2021-05-10 04:36:11', 'counter_101', 'busbangla1', 'BRTC', '01111111111'),
-('2021-05-10 05:13:10', 'counter_102', 'busbangla1', 'Gabtali', '01111111111'),
-('2021-04-30 16:14:59', 'greenline-benapole_counter_1', 'greenline_101', 'Bazar Counter\r\nOpposite of BGB Camp', '+88-01730060035,\r\n+88-04228-75776'),
-('2021-04-30 16:14:20', 'greenline-ctg_counter_1', 'greenline_101', 'A.K. Khan\r\n149/A/208 AK Khan Main Road', '+88-01730060021,\r\n+88-01970060021,\r\n+880-31-751161'),
-('2021-04-30 16:14:20', 'greenline-ctg_counter_2', 'greenline_101', 'Dampara – (New)\r\n34 Zakir Hossain Road, Dampara', '+88-01970060085'),
-('2021-04-30 16:31:25', 'greenline-dhaka_counter_1', 'greenline_101', 'Banani, Dhaka', '+8801111111111'),
-('2021-04-30 16:08:42', 'hanif_ctg_counter_1', 'hanif_101', 'BRTC', ''),
-('2021-04-30 16:09:20', 'hanif_dha_counter_1', 'hanif_101', 'Banani,Dhaka', '');
+('2021-05-21 14:19:50', 'challenger_ctg_counter_1', 'challenger_101', 'BRTC,Ctg', '+1111111111111'),
+('2021-05-21 14:22:27', 'challenger_ctg_counter_2', 'challenger_101', 'Dampara,Ctg', '+1111111111111'),
+('2021-05-21 14:23:25', 'challenger_dha_counter_1', 'challenger_101', 'Sayedabad,Dhaka', '+1111111111111'),
+('2021-05-21 14:23:59', 'challenger_dha_counter_2', 'challenger_101', 'Badda,Dhaka', '+1111111111111');
 
 -- --------------------------------------------------------
 
@@ -89,9 +86,8 @@ CREATE TABLE `buslist` (
 --
 
 INSERT INTO `buslist` (`REG`, `BUS_ID`, `OWNER`, `COACH_NO`, `CLASS`, `SEAT_TYPE`) VALUES
-('2021-05-10 04:51:52', 'busbangla1-103', 'busbangla1', '103', 'Business', '3seater'),
-('2021-05-11 13:58:52', 'greenline_101-105', 'greenline_101', '105', 'Business', '3seater'),
-('2021-04-30 16:25:47', 'greenline_101-202', 'greenline_101', '202', 'Double Decker', '4seater');
+('2021-05-21 14:24:57', 'challenger_101-201', 'challenger_101', '201', 'Business', '4seater'),
+('2021-05-21 14:25:08', 'challenger_101-202', 'challenger_101', '202', 'Economy', '3seater');
 
 -- --------------------------------------------------------
 
@@ -105,17 +101,15 @@ CREATE TABLE `busowner` (
   `NAME` varchar(255) NOT NULL,
   `COMPANY` varchar(255) NOT NULL,
   `CONTACT` varchar(255) NOT NULL,
-  `REG_COUNTER` int(11) NOT NULL
+  `MAX_COUNTER` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `busowner`
 --
 
-INSERT INTO `busowner` (`REG`, `OWNER_ID`, `NAME`, `COMPANY`, `CONTACT`, `REG_COUNTER`) VALUES
-('2021-05-09 14:21:56', 'busbangla1', 'Avishek Chowdhury ', 'Bus Bangla Paribahan ', '1234', 5),
-('2021-04-30 16:07:18', 'greenline_101', 'Md. Sakib', 'GREENLINE PARIBAHAN ', '+8801111111111', 10),
-('2021-04-30 16:07:18', 'hanif_101', 'Hanif Sonket', 'HANIF PARIBAHAN', '+8801111111111', 5);
+INSERT INTO `busowner` (`REG`, `OWNER_ID`, `NAME`, `COMPANY`, `CONTACT`, `MAX_COUNTER`) VALUES
+('2021-05-21 14:18:16', 'challenger_101', 'Avishek Chowdhury ', 'Challenger Paribahan', '+8801816486550', 5);
 
 -- --------------------------------------------------------
 
@@ -129,9 +123,7 @@ CREATE TABLE `busschedule` (
   `SCHEDULE_ID` varchar(255) NOT NULL,
   `DEPART` varchar(255) NOT NULL,
   `DEST` varchar(255) NOT NULL,
-  `DEPART_COUNTER` varchar(255) NOT NULL,
   `DEST_COUNTER` varchar(255) NOT NULL,
-  `DEPART_TIME` timestamp NOT NULL DEFAULT current_timestamp(),
   `PRICE` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -139,11 +131,10 @@ CREATE TABLE `busschedule` (
 -- Dumping data for table `busschedule`
 --
 
-INSERT INTO `busschedule` (`REG`, `BUS_ID`, `SCHEDULE_ID`, `DEPART`, `DEST`, `DEPART_COUNTER`, `DEST_COUNTER`, `DEPART_TIME`, `PRICE`) VALUES
-('2021-05-10 05:23:45', 'busbangla1-103', '5a781fd348cffa1b6acb01a8fb7a56cf', 'Chattogram', 'Dhaka', 'counter_101', 'counter_102', '2021-05-09 19:20:00', 480),
-('2021-04-30 16:59:31', 'greenline_101-202', '88f22779627771c93c60b5f5285dcdd3', 'Chattogram', 'Dhaka', 'greenline-ctg_counter_1', 'greenline-dhaka_counter_1', '2021-05-10 09:00:00', 800),
-('2021-04-30 16:59:31', 'greenline_101-202', '8a67a48959335ccf30bab88e89884558', 'Chattogram', 'Benapole', 'greenline-ctg_counter_1', 'greenline-benapole_counter_1', '2021-05-10 09:00:00', 1200),
-('2021-05-11 16:02:06', 'greenline_101-105', 'd8427bdbe9a003f756d473f7a6a16f0c', 'Dhaka', 'Chattogram', 'greenline-dhaka_counter_1', 'greenline-ctg_counter_1', '2021-05-25 16:00:00', 480);
+INSERT INTO `busschedule` (`REG`, `BUS_ID`, `SCHEDULE_ID`, `DEPART`, `DEST`, `DEST_COUNTER`, `PRICE`) VALUES
+('2021-05-21 14:28:57', 'challenger_101-201', '3aa1ed06228f69057b16891ebb6dd49b', 'Dhaka', 'Chattogram', 'challenger_ctg_counter_1', 480),
+('2021-05-21 14:26:28', 'challenger_101-201', '5dea4a3960584f801d6fbef932c29552', 'Chattogram', 'Dhaka', 'challenger_dha_counter_2', 480),
+('2021-05-21 14:27:23', 'challenger_101-202', 'cd6f40284c271582bd9985d3051d730e', 'Chattogram', 'Dhaka', 'challenger_dha_counter_1', 900);
 
 -- --------------------------------------------------------
 
@@ -168,6 +159,29 @@ INSERT INTO `busseatlist` (`SEAT_TYPE`, `SEAT`, `SEAT_ROW`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `departlist`
+--
+
+CREATE TABLE `departlist` (
+  `SCHEDULE_ID` varchar(255) NOT NULL,
+  `DEPART_COUNTER` varchar(255) NOT NULL,
+  `DEPART_TIME` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `departlist`
+--
+
+INSERT INTO `departlist` (`SCHEDULE_ID`, `DEPART_COUNTER`, `DEPART_TIME`) VALUES
+('3aa1ed06228f69057b16891ebb6dd49b', 'challenger_dha_counter_1', '2021-05-30 21:30:00'),
+('3aa1ed06228f69057b16891ebb6dd49b', 'challenger_dha_counter_2', '2021-05-30 21:45:00'),
+('5dea4a3960584f801d6fbef932c29552', 'challenger_ctg_counter_1', '2021-05-30 16:30:00'),
+('5dea4a3960584f801d6fbef932c29552', 'challenger_ctg_counter_2', '2021-05-30 16:45:00'),
+('cd6f40284c271582bd9985d3051d730e', 'challenger_ctg_counter_2', '2021-05-30 16:30:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `guser`
 --
 
@@ -184,7 +198,8 @@ CREATE TABLE `guser` (
 --
 
 INSERT INTO `guser` (`REG`, `USER_ID`, `NAME`, `EMAIL`, `PHONE`) VALUES
-('2021-04-30 16:17:54', 'avishek', 'Avishek Chowdhury', 'avishekchy45@gmail.com', '01816486550');
+('2021-05-21 14:35:18', 'avishekchy1578', 'Avishek Chowdhury', 'avishekchy1578@gmail.com', '+8801816486550'),
+('2021-05-18 16:44:27', 'avishekchy54', 'Avishek Chowdhury', 'avishekchy54@gmail.com', '+8801816486550');
 
 -- --------------------------------------------------------
 
@@ -208,8 +223,8 @@ CREATE TABLE `ticket` (
 --
 
 INSERT INTO `ticket` (`REG`, `TICKET_ID`, `SCHEDULE_ID`, `SEAT`, `NAME`, `CONTACT`, `BOOKED_BY`, `PRICE`) VALUES
-('2021-05-11 20:23:03', '427068569', 'd8427bdbe9a003f756d473f7a6a16f0c', 'H1', 'av', '+11111111', 'greenline-dhaka_counter_1', 480),
-('2021-05-11 18:47:43', '576975911', 'd8427bdbe9a003f756d473f7a6a16f0c', 'H2, H3', 'av', '+11111111', 'greenline-dhaka_counter_1', 960);
+('2021-05-21 14:36:24', '726635886', '5dea4a3960584f801d6fbef932c29552', 'D3, D4', 'Avishek Chowdhury', '+8801816486550', 'avishekchy1578', 960),
+('2021-05-21 14:30:00', '858349108', '5dea4a3960584f801d6fbef932c29552', 'C3, C4', 'Avishek Chowdhury', '+8801816486550', 'challenger_ctg_counter_1', 960);
 
 -- --------------------------------------------------------
 
@@ -228,20 +243,15 @@ CREATE TABLE `ulogin` (
 --
 
 INSERT INTO `ulogin` (`UTYPE`, `ID`, `PASS`) VALUES
-('user', 'avishek', '123456'),
-('admin', 'avishekchy45', '123456'),
-('owner', 'busbangla1', '123456'),
-('counter', 'counter_101', '123456'),
-('counter', 'counter_102', '123456'),
-('counter', 'greenline-benapole_counter_1', '123456'),
-('counter', 'greenline-ctg_counter_1', '123456'),
-('counter', 'greenline-ctg_counter_2', '123456'),
-('counter', 'greenline-dhaka_counter_1', '123456'),
-('owner', 'greenline_101', '123456'),
-('owner', 'hanif_101', '123456'),
-('counter', 'hanif_ctg_counter_1', '123456'),
-('counter', 'hanif_dha_counter_1', '123456'),
-('admin', 'IfthekherM', '123456');
+('user', 'avishekchy1578', 'e10adc3949ba59abbe56e057f20f883e'),
+('admin', 'avishekchy45', 'e10adc3949ba59abbe56e057f20f883e'),
+('user', 'avishekchy54', 'e10adc3949ba59abbe56e057f20f883e'),
+('owner', 'challenger_101', 'e10adc3949ba59abbe56e057f20f883e'),
+('counter', 'challenger_ctg_counter_1', 'e10adc3949ba59abbe56e057f20f883e'),
+('counter', 'challenger_ctg_counter_2', 'e10adc3949ba59abbe56e057f20f883e'),
+('counter', 'challenger_dha_counter_1', 'e10adc3949ba59abbe56e057f20f883e'),
+('counter', 'challenger_dha_counter_2', 'e10adc3949ba59abbe56e057f20f883e'),
+('admin', 'IfthekherM', 'e10adc3949ba59abbe56e057f20f883e');
 
 --
 -- Indexes for dumped tables
@@ -280,7 +290,6 @@ ALTER TABLE `busowner`
 ALTER TABLE `busschedule`
   ADD PRIMARY KEY (`SCHEDULE_ID`,`BUS_ID`),
   ADD KEY `BUS_ID` (`BUS_ID`),
-  ADD KEY `schedule_ibfk_2` (`DEPART_COUNTER`),
   ADD KEY `schedule_ibfk_3` (`DEST_COUNTER`);
 
 --
@@ -288,6 +297,13 @@ ALTER TABLE `busschedule`
 --
 ALTER TABLE `busseatlist`
   ADD PRIMARY KEY (`SEAT_TYPE`,`SEAT`) USING BTREE;
+
+--
+-- Indexes for table `departlist`
+--
+ALTER TABLE `departlist`
+  ADD PRIMARY KEY (`SCHEDULE_ID`,`DEPART_COUNTER`),
+  ADD KEY `DEPART_COUNTER` (`DEPART_COUNTER`);
 
 --
 -- Indexes for table `guser`
@@ -343,8 +359,14 @@ ALTER TABLE `busowner`
 --
 ALTER TABLE `busschedule`
   ADD CONSTRAINT `busschedule_ibfk_1` FOREIGN KEY (`BUS_ID`) REFERENCES `buslist` (`BUS_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `busschedule_ibfk_2` FOREIGN KEY (`DEPART_COUNTER`) REFERENCES `buscounter` (`COUNTER_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `busschedule_ibfk_3` FOREIGN KEY (`DEST_COUNTER`) REFERENCES `buscounter` (`COUNTER_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `departlist`
+--
+ALTER TABLE `departlist`
+  ADD CONSTRAINT `departlist_ibfk_1` FOREIGN KEY (`SCHEDULE_ID`) REFERENCES `busschedule` (`SCHEDULE_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `departlist_ibfk_2` FOREIGN KEY (`DEPART_COUNTER`) REFERENCES `buscounter` (`COUNTER_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `guser`

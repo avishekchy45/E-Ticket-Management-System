@@ -2,7 +2,7 @@
 if (!isset($_SESSION['user'])) {
     echo "
     <nav class='navbar navbar-expand-sm bg-info navbar-dark sticky-top'>
-        <a class='navbar-brand animate__animated animate__heartBeat animate__slower animate__infinite' href='index.php'>ticket.com</a>
+        <a class='navbar-brand animate__animated animate__heartBeat animate__slower animate__infinite' href='index'>ticket.com</a>
 
         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
             <span class='navbar-toggler-icon'></span>
@@ -36,7 +36,7 @@ if (!isset($_SESSION['user'])) {
     $user_id = $_SESSION["user_id"];
     echo "
         <nav class='navbar navbar-expand-sm bg-info navbar-dark sticky-top'>
-            <a class='navbar-brand' href='$user/index.php'>ticket.com</a>
+            <a class='navbar-brand' href='$user/index'>ticket.com</a>
 
             <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
                 <span class='navbar-toggler-icon'></span>

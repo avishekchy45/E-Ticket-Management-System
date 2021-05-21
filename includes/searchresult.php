@@ -9,7 +9,7 @@ if (isset($_POST['search'])) {
     ";
     $depart = $_POST['from'];
     $dest = $_POST['to'];
-    $query = "SELECT * FROM busschedule,buslist,busowner WHERE DEPART = '$depart' AND DEST = '$dest' AND busschedule.BUS_ID = buslist.BUS_ID AND buslist.OWNER = busowner.OWNER_ID AND DEPART_TIME >= NOW() ORDER BY DEPART_TIME";
+    $query = "SELECT * FROM busschedule,buslist,busowner,departlist WHERE DEPART = '$depart' AND DEST = '$dest' AND departlist.SCHEDULE_ID=busschedule.SCHEDULE_ID AND busschedule.BUS_ID = buslist.BUS_ID AND buslist.OWNER = busowner.OWNER_ID AND DEPART_TIME >= NOW() ORDER BY DEPART_TIME";
     $result = mysqli_query($con, $query);
     if (mysqli_num_rows($result) == 0) {
         echo "

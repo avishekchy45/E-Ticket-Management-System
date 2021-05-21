@@ -51,7 +51,7 @@ if (isset($_POST['register'])) {
         echo "
             <script>
             alert('Successfully registered.');
-            location.href = 'user/index.php';
+            location.href = 'user/';
             </script>
         ";
     } else {

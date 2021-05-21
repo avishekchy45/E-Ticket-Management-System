@@ -56,7 +56,7 @@ if (isset($_POST['register'])) {
     $acquery = "INSERT INTO buscounter (COUNTER_ID,OWNER,ADDRESS,CONTACT) VALUES ('$id','$owner','$address','$phone')";
 
     if (mysqli_query($con, $loginquery) && mysqli_query($con, $acquery)) {
-        echo "<script>alert('Successfully Registered COUNTER ID( $id ).')</script>";
+        echo "<script>alert('Successfully Registered COUNTER ID( $id ).');location.href = 'addcounter.php';</script>";
     } else {
         echo "<div class='text-danger'> Registration Error! </div>" . mysqli_error($con);
     }
