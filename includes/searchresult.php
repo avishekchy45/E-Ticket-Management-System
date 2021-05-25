@@ -14,10 +14,11 @@ if (isset($_POST['search'])) {
     if (mysqli_num_rows($result) == 0) {
         echo "
         <br><h6 class='alert alert-danger animate__animated animate__shakeX'>NO BUS AVAILABLE NOW FROM $depart to $dest</h6><br>
+        <br><a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
         ";
     } else {
         echo "
-        <br><table class='table table-striped table-hover' id='list'>
+        <br><table class='table table-info table-hover' id='list'>
         <caption>List of Available Buses</caption>
         <thead class='thead-dark animate__animated animate__headShake animate__slower'>
         <tr>
@@ -26,6 +27,7 @@ if (isset($_POST['search'])) {
         <th>VIEW SEATS</th>
         </tr>
         </thead>
+        <tbody>
         ";
         while ($row = mysqli_fetch_array($result)) {
             $bus_id = $row['BUS_ID'];
@@ -41,20 +43,35 @@ if (isset($_POST['search'])) {
             $row2 = mysqli_fetch_assoc($result2);
             $address = $row2['ADDRESS'];
             echo "
-            <form action='?schedule=$schedule_id&bus=$bus_id' target='_self' enctype='multipart/form-data' method='POST'>
-            <tbody class='animate__animated animate__flipInX animate__slower'>
-            <tr>
+            <tr class='animate__animated animate__flipInX animate__slower'>
             <td class='text-left'><b class='text-info'>$company</b> ($class)<br> <b>From:</b> $depart ($address)<br> <b>To:</b> $dest<br> <b>Departure Time:</b> <i class='text-info'>$time</i> </td>
             <td class='align-middle'>$price</td>
+            <form action='?schedule=$schedule_id&bus=$bus_id' target='_self' enctype='multipart/form-data' method='POST'>
             <td class='align-middle'><button type='submit' class='btn btn-outline-secondary' value='GO' name='go'>GO</button></td>
-            </tr>
-            </tbody>
             </form>
+            </tr>
             ";
         }
+        echo "
+        </tbody>
+        </table>
+        <br><a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
+        ";
     }
-    echo "
-    </table>
-    <br><a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
-    ";
+    
 }
+?>
+<script>
+$(document).ready( function () {
+    $('#list').DataTable();
+} );
+$('#list').dataTable( {
+  "lengthMenu": [ 5, 10, 25, 50, 75, 100 ],
+  columnDefs: [
+    { orderable: false, targets: [0,2] }
+  ],select: {
+        style: 'api'
+    }
+} );
+
+</script>
