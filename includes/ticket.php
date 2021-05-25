@@ -83,7 +83,7 @@ if (isset($_GET['ticket'])) {
                   <th scope='row'>PRICE : </th>
                   <td> $price </td>
                   <th scope='row'>STATUS : </th>
-                  <td> UNPAID </td>
+                  <td> PAID </td>
                   <th scope='row'> </th>
                   <td> </td>
                   <th scope='row'> </th>

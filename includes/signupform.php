@@ -8,11 +8,11 @@
     <div class="col">
         <div class="form-group">
             <label for="usr">NAME</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+            <input type="text" class="form-control" id="name" name="name" pattern="[A-Za-z ]{3,}" title="Enter your Full Name"  required>
         </div>
         <div class="form-group">
             <label for="usr">USER NAME</label>
-            <input type="text" class="form-control" id="usr" name="id" required>
+            <input type="text" class="form-control" id="usr" name="id" pattern="[A-Za-z0-9_]{4,}" maxlength="140" title="Enter a unique username(minimum 4 characters,maximum 13 characters)"required>
         </div>
         <div class="form-group">
             <label for="email">EMAIL</label>
@@ -20,11 +20,11 @@
         </div>
         <div class="form-group">
             <label for="phone">PHONE</label>
-            <input type="tel" class="form-control" id="phone" name="phone">
+            <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{11}" title="Enter your 11 digit phone Number">
         </div>
         <div class="form-group">
             <label for="pwd">PASSWORD</label>
-            <input type="password" class="form-control" id="pwd" name="pass" required>
+            <input type="password" class="form-control" id="pwd" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required>
         </div>
     </div>
     <br><button type="submit" class="btn btn-outline-warning" value="REGISTER" name="register">REGISTER</button><br>

@@ -7,8 +7,11 @@ if (isset($_POST['go'])) {
   $bus_id = $_GET['bus'];
   echo "
   <style>
-  #searchform,list{
+  #searchform{
       display:none;
+  }
+  #list{
+    display:none;
   }
   </style>
   <form target='_self' enctype='multipart/form-data' method='POST' class='font-weight-bolder'>
@@ -94,16 +97,18 @@ if (isset($_POST['go'])) {
       </div>
     </div>
     <br>
-    <br><button type='submit' class='btn btn-outline-info' value='CONFIRM' name='confirm' id='confirm'>CONFIRM TICKET</button>
+    <br><button type='submit' class='btn btn-outline-info' value='CONFIRM' name='confirm' id='confirm'>PROCEED TO CHECOUT</button>
     <a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
     </form>
     <br>
   ";
 }
+
 if (isset($_POST['confirm'])) {
   if (!isset($_SESSION['user'])) {
     echo ("<script>location.href = 'login.php';</script>");
   } else {
+/*
     $counter = "$user_id";
     $schedule_id = $_GET['schedule'];
     $bus_id = $_GET['bus'];
@@ -117,7 +122,24 @@ if (isset($_POST['confirm'])) {
     //$ticket_id = md5("$schedule_id" . "-" . "$choosedseat[0]");
     $ticket_id = rand();
     $allseat = implode(', ', $_POST['choosedseat']);
+*/
+    $_SESSION['counter'] = $user_id;
+    $_SESSION['schedule_id'] = $_GET['schedule'];
+    $_SESSION['bus_id'] = $_GET['bus'];
+    $_SESSION['class'] = $_POST['class'];
+    $_SESSION['coach'] = $_POST['coach'];
+    $_SESSION['name'] = $_POST['name'];
+    $_SESSION['phone'] = $_POST['phone'];
+    $_SESSION['choosedseat'] = $_POST['choosedseat'];
+    //$choosedseat = $_POST['choosedseat'];
+    $_SESSION['total_seat'] = count($_SESSION['choosedseat']);
+    $_SESSION['price'] = $_POST['price'] * $_SESSION['total_seat'];
+    $_SESSION['ticket_id'] = rand();
+    $_SESSION['allseat'] = implode(', ', $_POST['choosedseat']);
 
+    echo ("<script>location.href = 'payment/';</script>");
+
+    /*
     $query = "INSERT INTO ticket (TICKET_ID,SCHEDULE_ID,SEAT,NAME,CONTACT,BOOKED_BY,PRICE) VALUES ('$ticket_id','$schedule_id','$allseat','$name','$phone','$counter','$price')";
     if (mysqli_query($con, $query)) {
       echo "<script>alert('Successfully Booked Seat ( $allseat )')</script>";
@@ -137,6 +159,7 @@ if (isset($_POST['confirm'])) {
     }
     if ($failed == 0)
       echo ("<script>location.href = 'printticket.php?ticket=$ticket_id';</script>");
+    */
   }
 }
 ?>
