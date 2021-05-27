@@ -58,20 +58,18 @@ if (isset($_POST['search'])) {
         <br><a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
         ";
     }
-    
 }
 ?>
 <script>
-$(document).ready( function () {
-    $('#list').DataTable();
-} );
-$('#list').dataTable( {
-  "lengthMenu": [ 5, 10, 25, 50, 75, 100 ],
-  columnDefs: [
-    { orderable: false, targets: [0,2] }
-  ],select: {
-        style: 'api'
-    }
-} );
-
+    $(document).ready(function() {
+        $('#list').DataTable();
+    });
+    $('#list').dataTable({
+        "order": [],
+        "lengthMenu": [5, 10, 20, 50, 75, 100],
+        columnDefs: [{
+            orderable: false,
+            targets: [0, 2]
+        }]
+    });
 </script>

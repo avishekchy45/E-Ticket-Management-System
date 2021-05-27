@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2021 at 04:38 PM
+-- Generation Time: May 26, 2021 at 09:17 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -37,10 +37,16 @@ CREATE TABLE `bookedseat` (
 --
 
 INSERT INTO `bookedseat` (`TICKET_ID`, `SEAT`) VALUES
-('726635886', 'D3'),
-('726635886', 'D4'),
-('858349108', 'C3'),
-('858349108', 'C4');
+('1487859617', 'A3'),
+('1487859617', 'A4'),
+('789038234', 'D3'),
+('789038234', 'D4'),
+('91849007', 'C3'),
+('91849007', 'C4'),
+('91849007', 'D3'),
+('91849007', 'D4'),
+('980208505', 'C2'),
+('980208505', 'C3');
 
 -- --------------------------------------------------------
 
@@ -63,8 +69,13 @@ CREATE TABLE `buscounter` (
 INSERT INTO `buscounter` (`REG`, `COUNTER_ID`, `OWNER`, `ADDRESS`, `CONTACT`) VALUES
 ('2021-05-21 14:19:50', 'challenger_ctg_counter_1', 'challenger_101', 'BRTC,Ctg', '+1111111111111'),
 ('2021-05-21 14:22:27', 'challenger_ctg_counter_2', 'challenger_101', 'Dampara,Ctg', '+1111111111111'),
+('2021-05-26 17:33:43', 'challenger_ctg_counter_3', 'challenger_101', 'Cinema Palace, Ctg', '+1111111111111'),
 ('2021-05-21 14:23:25', 'challenger_dha_counter_1', 'challenger_101', 'Sayedabad,Dhaka', '+1111111111111'),
-('2021-05-21 14:23:59', 'challenger_dha_counter_2', 'challenger_101', 'Badda,Dhaka', '+1111111111111');
+('2021-05-21 14:23:59', 'challenger_dha_counter_2', 'challenger_101', 'Badda,Dhaka', '+1111111111111'),
+('2021-05-26 18:59:42', 'max_ctg_1', 'max_101', 'BRTC,CTG', '+1111111111111'),
+('2021-05-26 19:01:27', 'max_ctg_2', 'max_101', 'AK Khan Main Road', '+1111111111111'),
+('2021-05-26 19:09:38', 'max_dha_1', 'max_101', 'Gabtai,Dhaka', '+1111111111111'),
+('2021-05-26 19:03:56', 'max_syl_1', 'max_101', 'Mazargate,Sylhet', '+1111111111111');
 
 -- --------------------------------------------------------
 
@@ -86,8 +97,10 @@ CREATE TABLE `buslist` (
 --
 
 INSERT INTO `buslist` (`REG`, `BUS_ID`, `OWNER`, `COACH_NO`, `CLASS`, `SEAT_TYPE`) VALUES
-('2021-05-21 14:24:57', 'challenger_101-201', 'challenger_101', '201', 'Business', '4seater'),
-('2021-05-21 14:25:08', 'challenger_101-202', 'challenger_101', '202', 'Economy', '3seater');
+('2021-05-21 14:24:57', 'challenger_101-201', 'challenger_101', '201', 'Economy', '4seater'),
+('2021-05-21 14:25:08', 'challenger_101-202', 'challenger_101', '202', 'Business', '3seater'),
+('2021-05-26 19:05:14', 'max_101-503', 'max_101', '503', 'Double Decker', '3seater'),
+('2021-05-26 19:05:28', 'max_101-504', 'max_101', '504', 'Economy', '4seater');
 
 -- --------------------------------------------------------
 
@@ -109,7 +122,8 @@ CREATE TABLE `busowner` (
 --
 
 INSERT INTO `busowner` (`REG`, `OWNER_ID`, `NAME`, `COMPANY`, `CONTACT`, `MAX_COUNTER`) VALUES
-('2021-05-21 14:18:16', 'challenger_101', 'Avishek Chowdhury ', 'Challenger Paribahan', '+8801816486550', 5);
+('2021-05-21 14:18:16', 'challenger_101', 'Md. Sakib', 'Challenger Paribahan', '+8801816486550', 5),
+('2021-05-26 18:56:30', 'max_101', 'Bill Gates', 'MAX PARIBAHAN', '+1111111111111', 5);
 
 -- --------------------------------------------------------
 
@@ -132,9 +146,12 @@ CREATE TABLE `busschedule` (
 --
 
 INSERT INTO `busschedule` (`REG`, `BUS_ID`, `SCHEDULE_ID`, `DEPART`, `DEST`, `DEST_COUNTER`, `PRICE`) VALUES
-('2021-05-21 14:28:57', 'challenger_101-201', '3aa1ed06228f69057b16891ebb6dd49b', 'Dhaka', 'Chattogram', 'challenger_ctg_counter_1', 480),
-('2021-05-21 14:26:28', 'challenger_101-201', '5dea4a3960584f801d6fbef932c29552', 'Chattogram', 'Dhaka', 'challenger_dha_counter_2', 480),
-('2021-05-21 14:27:23', 'challenger_101-202', 'cd6f40284c271582bd9985d3051d730e', 'Chattogram', 'Dhaka', 'challenger_dha_counter_1', 900);
+('2021-05-26 19:10:47', 'max_101-504', '0877c3e7c801c41c286280fdaf985f11', 'Chattogram', 'Dhaka', 'max_dha_1', 480),
+('2021-05-26 19:07:47', 'max_101-503', '1a401b3503d572e29ce271e480feb95f', 'Sylhet', 'Chattogram', 'max_ctg_1', 700),
+('2021-05-26 19:06:53', 'max_101-503', '470aec70a6584075f6c8980e39a4c4d0', 'Chattogram', 'Sylhet', 'max_syl_1', 700),
+('2021-05-26 17:30:12', 'challenger_101-202', '55e554d8a076fff5f31c9ed18d681107', 'Chattogram', 'Dhaka', 'challenger_dha_counter_2', 800),
+('2021-05-26 17:24:06', 'challenger_101-201', 'd281b1823a162eb633c1d15e7465b527', 'Chattogram', 'Dhaka', 'challenger_dha_counter_1', 480),
+('2021-05-26 17:28:04', 'challenger_101-201', 'de1ddbea7770a3db0f6a6c239bb3149e', 'Dhaka', 'Chattogram', 'challenger_ctg_counter_1', 480);
 
 -- --------------------------------------------------------
 
@@ -173,11 +190,17 @@ CREATE TABLE `departlist` (
 --
 
 INSERT INTO `departlist` (`SCHEDULE_ID`, `DEPART_COUNTER`, `DEPART_TIME`) VALUES
-('3aa1ed06228f69057b16891ebb6dd49b', 'challenger_dha_counter_1', '2021-05-30 21:30:00'),
-('3aa1ed06228f69057b16891ebb6dd49b', 'challenger_dha_counter_2', '2021-05-30 21:45:00'),
-('5dea4a3960584f801d6fbef932c29552', 'challenger_ctg_counter_1', '2021-05-30 16:30:00'),
-('5dea4a3960584f801d6fbef932c29552', 'challenger_ctg_counter_2', '2021-05-30 16:45:00'),
-('cd6f40284c271582bd9985d3051d730e', 'challenger_ctg_counter_2', '2021-05-30 16:30:00');
+('0877c3e7c801c41c286280fdaf985f11', 'max_ctg_1', '2025-06-05 05:10:00'),
+('0877c3e7c801c41c286280fdaf985f11', 'max_ctg_2', '2025-05-27 05:30:00'),
+('1a401b3503d572e29ce271e480feb95f', 'max_syl_1', '2025-06-05 05:00:00'),
+('470aec70a6584075f6c8980e39a4c4d0', 'max_ctg_1', '2025-06-04 02:00:00'),
+('470aec70a6584075f6c8980e39a4c4d0', 'max_ctg_2', '2025-06-04 02:30:00'),
+('55e554d8a076fff5f31c9ed18d681107', 'challenger_ctg_counter_1', '2025-06-04 17:30:00'),
+('55e554d8a076fff5f31c9ed18d681107', 'challenger_ctg_counter_2', '2025-06-04 17:50:00'),
+('d281b1823a162eb633c1d15e7465b527', 'challenger_ctg_counter_1', '2025-06-04 09:45:00'),
+('d281b1823a162eb633c1d15e7465b527', 'challenger_ctg_counter_2', '2025-06-04 10:00:00'),
+('de1ddbea7770a3db0f6a6c239bb3149e', 'challenger_dha_counter_1', '2025-06-05 04:45:00'),
+('de1ddbea7770a3db0f6a6c239bb3149e', 'challenger_dha_counter_2', '2025-06-05 05:00:00');
 
 -- --------------------------------------------------------
 
@@ -204,6 +227,31 @@ INSERT INTO `guser` (`REG`, `USER_ID`, `NAME`, `EMAIL`, `PHONE`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `payment`
+--
+
+CREATE TABLE `payment` (
+  `TICKET_ID` varchar(255) NOT NULL,
+  `AMOUNT` float(10,2) NOT NULL,
+  `AMOUNT_CURR` varchar(10) NOT NULL,
+  `TXN_ID` varchar(255) NOT NULL,
+  `CHECKOUT_SESSION_ID` varchar(255) NOT NULL,
+  `PAYMENT_STATUS` varchar(10) NOT NULL,
+  `CREATED` datetime NOT NULL,
+  `MODIFIED` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`TICKET_ID`, `AMOUNT`, `AMOUNT_CURR`, `TXN_ID`, `CHECKOUT_SESSION_ID`, `PAYMENT_STATUS`, `CREATED`, `MODIFIED`) VALUES
+('789038234', 12.00, 'usd', 'pi_1IvSCAA5CMRaeCa6xA3O6mKa', 'cs_test_a1jtQhq7mdGdIFYuWeAKyW7l7YK9S6P8OXAX6qBiAdIzPRDAQdfLNY6ol8', 'succeeded', '2021-05-27 01:15:26', '2021-05-27 01:15:26'),
+('980208505', 20.00, 'usd', 'pi_1IvREfA5CMRaeCa6Wfetgq8M', 'cs_test_a1hY0r8z6VjszS2TeF38QLPdVKjIFiusATFNJtwRirVhUceuGlkm8eGKo8', 'succeeded', '2021-05-27 00:14:01', '2021-05-27 00:14:01');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ticket`
 --
 
@@ -223,8 +271,10 @@ CREATE TABLE `ticket` (
 --
 
 INSERT INTO `ticket` (`REG`, `TICKET_ID`, `SCHEDULE_ID`, `SEAT`, `NAME`, `CONTACT`, `BOOKED_BY`, `PRICE`) VALUES
-('2021-05-21 14:36:24', '726635886', '5dea4a3960584f801d6fbef932c29552', 'D3, D4', 'Avishek Chowdhury', '+8801816486550', 'avishekchy1578', 960),
-('2021-05-21 14:30:00', '858349108', '5dea4a3960584f801d6fbef932c29552', 'C3, C4', 'Avishek Chowdhury', '+8801816486550', 'challenger_ctg_counter_1', 960);
+('2021-05-26 19:14:32', '1487859617', '0877c3e7c801c41c286280fdaf985f11', 'A3, A4', 'Avishek Chowdhury', '+8801816486550', 'max_ctg_1', 960),
+('2021-05-26 19:15:26', '789038234', '0877c3e7c801c41c286280fdaf985f11', 'D3, D4', 'Avishek Chowdhury', '+8801816486550', 'max_ctg_1', 960),
+('2021-05-26 18:19:48', '91849007', 'd281b1823a162eb633c1d15e7465b527', 'C3, C4, D3, D4', 'Avishek Chowdhury', '+8801816486550', 'challenger_ctg_counter_1', 1920),
+('2021-05-26 18:14:00', '980208505', '55e554d8a076fff5f31c9ed18d681107', 'C2, C3', 'Avishek Chowdhury', '+8801816486550', 'avishekchy54', 1600);
 
 -- --------------------------------------------------------
 
@@ -249,9 +299,15 @@ INSERT INTO `ulogin` (`UTYPE`, `ID`, `PASS`) VALUES
 ('owner', 'challenger_101', 'e10adc3949ba59abbe56e057f20f883e'),
 ('counter', 'challenger_ctg_counter_1', 'e10adc3949ba59abbe56e057f20f883e'),
 ('counter', 'challenger_ctg_counter_2', 'e10adc3949ba59abbe56e057f20f883e'),
+('counter', 'challenger_ctg_counter_3', 'e10adc3949ba59abbe56e057f20f883e'),
 ('counter', 'challenger_dha_counter_1', 'e10adc3949ba59abbe56e057f20f883e'),
 ('counter', 'challenger_dha_counter_2', 'e10adc3949ba59abbe56e057f20f883e'),
-('admin', 'IfthekherM', 'e10adc3949ba59abbe56e057f20f883e');
+('admin', 'IfthekherM', 'e10adc3949ba59abbe56e057f20f883e'),
+('owner', 'max_101', 'e10adc3949ba59abbe56e057f20f883e'),
+('counter', 'max_ctg_1', 'e267cfcd18461ce938067eca67c59f41'),
+('counter', 'max_ctg_2', 'e267cfcd18461ce938067eca67c59f41'),
+('counter', 'max_dha_1', 'e267cfcd18461ce938067eca67c59f41'),
+('counter', 'max_syl_1', 'e267cfcd18461ce938067eca67c59f41');
 
 --
 -- Indexes for dumped tables
@@ -310,6 +366,12 @@ ALTER TABLE `departlist`
 --
 ALTER TABLE `guser`
   ADD PRIMARY KEY (`USER_ID`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`TICKET_ID`,`PAYMENT_STATUS`);
 
 --
 -- Indexes for table `ticket`
@@ -373,6 +435,12 @@ ALTER TABLE `departlist`
 --
 ALTER TABLE `guser`
   ADD CONSTRAINT `guser_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `ulogin` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `payment`
+--
+ALTER TABLE `payment`
+  ADD CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`TICKET_ID`) REFERENCES `ticket` (`TICKET_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `ticket`

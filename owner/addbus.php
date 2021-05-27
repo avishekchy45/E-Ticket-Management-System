@@ -1,7 +1,7 @@
 <?php
 session_start();
 $type = $_SESSION['user'];
-$id = $_SESSION['user_id'];
+$user_id = $_SESSION['user_id'];
 include("../connection.php");
 include("../includes/isloggedout.php");
 include("../includes/isowner.php");

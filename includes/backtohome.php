@@ -17,7 +17,7 @@ echo "
                     <a class='nav-link dropdown-toggle' href='#' id='navbardrop' data-toggle='dropdown'> $user_id </a>
                     <div class='dropdown-menu'>
                         <a class='dropdown-item' href='../index'>Home</a>
-                        <a class='dropdown-item' href='../settings'>Settings</a>
+                        <a class='dropdown-item' href='../all/settings'>Settings</a>
                         <a class='dropdown-item text-danger' href='?logout'>LOG OUT</a>
                     </div>
                 </li>
