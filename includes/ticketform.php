@@ -133,7 +133,7 @@ if (isset($_POST['confirm'])) {
     }
   }
   if ($failed == 0)
-    echo ("<script>location.href = '../printticket.php?ticket=$ticket_id';</script>");
+    echo ("<script>location.href = '../all/printticket.php?ticket=$ticket_id';</script>");
 }
 ?>
 

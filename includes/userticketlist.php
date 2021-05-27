@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) == 0) {
         $price = $row['PRICE'];
 
         echo "
-        <form action='../printticket.php?ticket=$ticket_id' target='_self' enctype='multipart/form-data' method='POST'>
+        <form action='../all/printticket.php?ticket=$ticket_id' target='_self' enctype='multipart/form-data' method='POST'>
         <tbody>
         <tr>
         <td class='text-left'><b>BOOKED ON:</b> $reg<br> <b>TICKET ID:</b> $ticket_id<br> <b>SCHEDULE_ID:</b> $schedule_id<br> <b>NAME:</b> $name<br> <b>CONTACT:</b> $contact<br> <b>SEAT:</b> <i class='text-info'>$seat</i> </td>

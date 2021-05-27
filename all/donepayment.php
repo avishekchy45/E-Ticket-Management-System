@@ -4,7 +4,7 @@ $type = $_SESSION['user'];
 $user_id = $_SESSION['user_id'];
 include("../connection.php");
 include("../includes/isloggedout.php");
-include("../includes/isadmin.php");
+include("../includes/isuser.php");
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +20,9 @@ include("../includes/isadmin.php");
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
-    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="../style.css">
     <link rel="icon" type="image/png" href="../logo.png" />
-    <title>List of Owners</title>
+    <title>ticket.com</title>
 </head>
 
 <body>
@@ -38,7 +36,7 @@ include("../includes/isadmin.php");
         <div class="row no-gutters">
             <div class="col-sm text-center">
                 <?php
-                include("../includes/navbar.php");
+                include("../includes/backtohome.php");
                 ?>
             </div>
         </div>
@@ -49,14 +47,12 @@ include("../includes/isadmin.php");
         <div class="row">
             <!-- MENU -->
             <div class="col-sm-2 text-left">
-                <?php
-                include("../includes/menu.php");
-                ?>
+                
             </div>
             <!-- MAIN -->
             <div class="col-sm-8 text-center">
                 <?php
-                include("../includes/ownerlist.php");
+                include("../includes/userpaymentlist.php");
                 ?>
             </div>
             <!-- SIDEBAR -->
@@ -78,7 +74,6 @@ include("../includes/isadmin.php");
             </div>
         </div>
     </div>
-
 
 </body>
 

@@ -59,7 +59,7 @@ require_once 'config.php';
                 <div id="paymentResponse"></div>
 
                 <!-- Product details -->
-                <div class="card mx-auto border-info" style="width: 20rem;">
+                <div class="card mx-auto border-info" style="width: auto;">
                     <img src="../logo.png" class="card-img-top" alt="...">
                     <div class="card-body text-center border-danger">
                         <h5 class="card-title">Confirm Ticket</h5>

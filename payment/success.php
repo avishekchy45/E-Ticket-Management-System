@@ -193,7 +193,7 @@ if (!empty($_GET['session_id'])) {
                 <p class="text-justify"><b>Ticket ID:</b> <?php echo $ticket_id; ?></p>
                 <p class="text-justify"><b>Price:</b> <?php echo $productPrice . ' ' . strtoupper($currency); ?></p>
 
-                <a href='<?php echo"../printticket.php?ticket=$ticket_id"; ?>' class='btn btn-outline-primary'>PRINT TICKET</a><br>
+                <a href='<?php echo"../all/printticket.php?ticket=$ticket_id"; ?>' class='btn btn-outline-primary'>PRINT TICKET</a><br>
 
             </div>
             <!-- SIDEBAR -->
