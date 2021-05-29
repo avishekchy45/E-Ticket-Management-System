@@ -1,5 +1,5 @@
 <br>
-<h2 class='text-danger'>TICKET BOOKING WITH ONLINE PAYMENT WILL BE AVAILABLE SOON</h2>
+<h2 class='text-success'>TICKET BOOKING WITH ONLINE PAYMENT IS AVAILABLE NOW</h2>
 <br>
 <?php
 if (isset($_POST['go'])) {
@@ -97,7 +97,7 @@ if (isset($_POST['go'])) {
       </div>
     </div>
     <br>
-    <br><button type='submit' class='btn btn-outline-info' value='CONFIRM' name='confirm' id='confirm'>PROCEED TO CHECOUT</button>
+    <br><button type='submit' class='btn btn-outline-info' value='CONFIRM' name='confirm' id='confirm'>PROCEED TO CHECKOUT</button>
     <a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
     </form>
     <br>

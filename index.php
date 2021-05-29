@@ -44,7 +44,7 @@ include("connection.php");
     </div>
 
     <!-- MENU,MAIN,SIDEBAR -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <!-- MENU -->
             <div class="col-sm-2 text-left">

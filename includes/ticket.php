@@ -1,3 +1,12 @@
+<style>
+  thead {
+    font-family: monospace;
+  }
+
+  tbody {
+    font-family: monospace;
+  }
+</style>
 <?php
 if (isset($_GET['ticket'])) {
   $ticket_id = $_GET['ticket'];

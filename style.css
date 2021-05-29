@@ -1,5 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Train+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
 .selector-for-some-widget {
     box-sizing: content-box;
+}
+
+
+/*Font Design*/
+
+body {
+    font-family: 'Bree Serif', serif;
+}
+
+.navbar {
+    font-family: 'Oleo Script', cursive;
+}
+
+.nav {
+    font-family: 'Bowlby One SC', cursive;
+}
+
+button {
+    font-family: 'Train One', cursive;
+}
+
+thead {
+    font-family: 'Bungee Shade', cursive;
+}
+
+tbody {
+    font-family: 'Vast Shadow', cursive;
+}
+
+.navbar-brand {
+    font-family: 'Bungee Shade', cursive;
 }
 
 
@@ -74,5 +112,9 @@ input[type="checkbox"].departcounter:checked+label {
 }
 
 input[type="checkbox"].departcounter:checked+label:after {
+    content: "✅";
+}
+
+nput[type="checkbox"].departcounter:checked+label:after {
     content: "✅";
 }
