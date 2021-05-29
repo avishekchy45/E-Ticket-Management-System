@@ -14,8 +14,8 @@ $Days    = floor($diff / (60 * 60 * 24));
 $Hours   = floor(($diff - ($Days * 60 * 60 * 24)) / (60 * 60));
 $Minutes = floor(($diff - ($Days * 60 * 60 * 24) - ($Hours * 60 * 60)) / 60);
 
-$address = $row['ADDRESS'] == '' ? "NOT FOUND <a class='badge badge-danger' href='../settings.php'>UPDATE</a>" : $row['ADDRESS'];
-$phone = $row['CONTACT'] == '' ? "NOT FOUND <a class='badge badge-danger' href='settings.php'>UPDATE</a>" : $row['CONTACT'];
+$address = $row['ADDRESS'] == '' ? "NOT FOUND <a class='badge badge-danger' href='../all/settings.php'>UPDATE</a>" : $row['ADDRESS'];
+$phone = $row['CONTACT'] == '' ? "NOT FOUND <a class='badge badge-danger' href='all/settings.php'>UPDATE</a>" : $row['CONTACT'];
 $owner =  $row['NAME'];
 $company =  $row['COMPANY'];
 echo "
@@ -23,7 +23,7 @@ echo "
     <br>
     <h5 class='text-info'>👨‍💼 COUNTER DETAILS 👨‍💼</h5>
     <br>
-    <a class='badge badge-info' href='../settings.php'>UPDATE YOUR INFO</a><br><br>
+    <a class='badge badge-info' href='../all/settings.php'>UPDATE YOUR INFO</a><br><br>
     <table class='table table-striped table-hover table-responsive-sm'>
     <tr>
     <th>ADDRESS</th><td>$address</td>

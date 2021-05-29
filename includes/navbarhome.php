@@ -67,3 +67,4 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['user_id']);
     echo ("<script>location.href = 'login.php';</script>");
 }
+?>
