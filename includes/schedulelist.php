@@ -6,7 +6,8 @@ echo "
 <table class='table table-hover' id='schedulelist'>
 <thead class='thead-dark'>
 <tr>
-<th colspan='2'>BUS DETAILS</th>
+<th>BUS DETAILS</th>
+<th>DEPATRURE DETAILS</th>
 </tr>
 </thead>
 <tbody>

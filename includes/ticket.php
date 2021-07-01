@@ -90,7 +90,7 @@ if (isset($_GET['ticket'])) {
               </tr>
               <tr class='text-justify' style='text-align: justify;text-justify: inter-word;'>
                   <th scope='row'>PRICE : </th>
-                  <td> $price </td>
+                  <td> $price/= TK </td>
                   <th scope='row'>STATUS : </th>
                   <td> PAID </td>
                   <th scope='row'> </th>

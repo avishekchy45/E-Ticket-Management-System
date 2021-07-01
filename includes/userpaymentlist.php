@@ -7,15 +7,15 @@ if (mysqli_num_rows($result) == 0) {
     ";
 } else {
     echo "
-<br>
-<table class='table table-hover' id='paymentlist'>
-<thead class='thead-dark'>
-<tr>
-<th>PAYMENT DETAILS</th>
-</tr>
-</thead>
-<tbody>
-";
+    <br>
+    <table class='table table-hover' id='paymentlist'>
+    <thead class='thead-dark'>
+    <tr>
+    <th>PAYMENT DETAILS</th>
+    </tr>
+    </thead>
+    <tbody>
+    ";
     while ($row = mysqli_fetch_array($result)) {
         $ticketid = $row['TICKET_ID'];
         $amount = $row['AMOUNT'];

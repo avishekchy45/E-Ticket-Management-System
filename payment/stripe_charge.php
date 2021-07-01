@@ -35,16 +35,16 @@ if (!empty($request->checkoutSession)) {
             'line_items' => [[
                 'price_data' => [
                     'product_data' => [
-                        'name' => "productName",
+                        'name' => "TICKET",
                         'metadata' => [
-                            'pro_id' => "productID"
+                            'pro_id' => "$ticket_id"
                         ]
                     ],
                     'unit_amount' => $stripeAmount,
                     'currency' => $currency,
                 ],
                 'quantity' => 1,
-                'description' => "productName",
+                'description' => "$ticket_id",
             ]],
             'mode' => 'payment',
             'success_url' => STRIPE_SUCCESS_URL . '?session_id={CHECKOUT_SESSION_ID}',
