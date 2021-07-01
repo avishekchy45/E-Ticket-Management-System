@@ -16,6 +16,7 @@ if (mysqli_num_rows($result) == 0) {
     <th>VIEW SEATS</th>
     </tr>
     </thead>
+    <tbody>
     ";
     while ($row = mysqli_fetch_array($result)) {
         $bus_id = $row['BUS_ID'];
@@ -33,18 +34,18 @@ if (mysqli_num_rows($result) == 0) {
         $row2 = mysqli_fetch_assoc($result2);
         $address = $row2['ADDRESS'];
         echo "
-        <form action='?schedule=$schedule_id&bus=$bus_id' target='_self' enctype='multipart/form-data' method='POST'>
-        <tbody>
         <tr>
         <td class='text-left'><b class='text-info'>$company</b> ($class)<br> <b>From:</b> $depart<br> <b>To:</b> $dest ($address)<br> <b>Departure Time:</b> <i class='text-info'>$time</i> </td>
         <td class='align-middle'>$price</td>
+        <form action='?schedule=$schedule_id&bus=$bus_id' target='_self' enctype='multipart/form-data' method='POST'>
         <td class='align-middle'><button type='submit' class='btn btn-outline-secondary' value='GO' name='go'>GO</button></td>
-        </tr>
-        </tbody>
         </form>
+        </tr>
         ";
     }
     echo "
+    </tbody>
     </table>
     ";
 }
+?>
