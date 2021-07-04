@@ -21,6 +21,7 @@ Figure 1(index): Here is the Index Page of this project. Any User(registered/non
 ![index](https://user-images.githubusercontent.com/63364024/124392258-54673100-dd16-11eb-9abb-719f3e6c29e5.png)
 
 Figure 2(nobus): If no bus is scheduled for selected destination and departure this message will be displayed.
+
 ![nobus](https://user-images.githubusercontent.com/63364024/124396151-c006c980-dd29-11eb-8b4b-ca95e660b147.png)
 
 Figure 3(searchresult): If bus is available, list of bus will be displayed. Here user can sort bus based on price. User also can search for a certain class/any certain destination counter.  Any User(registered/non-registered) can search for ticket. But for confirming ticket with online payment user should be logged in.
@@ -33,43 +34,56 @@ Figure 5(login): This is the Login Page of all users (admin/owner/counter/user).
 ![login](https://user-images.githubusercontent.com/63364024/124392343-cc355b80-dd16-11eb-9515-7505652f16a7.png)
 
 Figure 6(home_admin): This is the Profile/Home Page of admin. Here admin can view total numbers of different users.
+
 ![home_admin](https://user-images.githubusercontent.com/63364024/124396212-03613800-dd2a-11eb-8924-0dad307ec2a4.png)
 
 Figure 7(registerowner): This is the “REGISTER OWNER” Page of admin. From this page admin will register owners. Owner can not add counter more than mentioned here.
+
 ![registerowner](https://user-images.githubusercontent.com/63364024/124396240-225fca00-dd2a-11eb-95e6-a0792bb5c405.png)
 
 Figure 8(listofowners): This is the "LIST OF OWNER” Page of admin. From this page admin can view the list of owners registered in system.
+
 ![listofowners](https://user-images.githubusercontent.com/63364024/124396253-373c5d80-dd2a-11eb-8755-bbd72d77df80.png)
 
 Figure 9(listofcounters): This is the "LIST OF COUNTER" Page of admin. From this page admin can view the list of counters registered in system.
+
 ![listofcounters](https://user-images.githubusercontent.com/63364024/124396287-681c9280-dd2a-11eb-867b-4bb85bdd50a2.png)
 
 Figure 10(listofpayments): This is the "LIST OF PAYMENTS" Page of admin. From this page admin can view the list of payments done in system.
+
 ![listofpayments](https://user-images.githubusercontent.com/63364024/124396299-7bc7f900-dd2a-11eb-8756-e0c863ab5d5e.png)
 
 Figure 11(resetpass): This is the "RESET PASSWORD" Page of admin. From this page admin can reset password of any user.
+
 ![resetpass](https://user-images.githubusercontent.com/63364024/124396311-91d5b980-dd2a-11eb-86cc-2544035c3982.png)
 
 Figure 12(bookedtickets): This is the "BOOKED TICKETS" Page of admin. This page will be available for every user. User can check and print his/her booked tickets from here.
 ![bookedtickets](https://user-images.githubusercontent.com/63364024/124392374-f4bd5580-dd16-11eb-834b-de945af3f668.png)
 
 Figure 13(home_owner): This is the Profile/Home Page of owner. Counter and general user will also have a similar home page.
+
 ![home_owner](https://user-images.githubusercontent.com/63364024/124396322-aade6a80-dd2a-11eb-98fd-216eb6819a08.png)
 
 Figure 14(addcounter): This is the "ADD COUNTER" Page of owner. Owner can add details of his available counters from here.
+
 ![addcounter](https://user-images.githubusercontent.com/63364024/124396342-c8133900-dd2a-11eb-9c41-ed8645d54386.png)
 
 Figure 15(addbus): This is the "ADD BUS" Page of owner. Owner can add details of his available buses from here.
+
 ![addbus](https://user-images.githubusercontent.com/63364024/124396354-dcefcc80-dd2a-11eb-8187-1a54b634f73d.png)
 
 Figure 16(schedulebus): This is the "SCHEDULE BUS" Page of owner. Owner can schedule bus of next 10 days from here with multiple counters. After scheduling buses will be accessible by selected counters and also available in search result for booking.
-![image](https://user-images.githubusercontent.com/63364024/124396371-f4c75080-dd2a-11eb-89b9-7bbe08074d85.png)
+
+![schedulebus](https://user-images.githubusercontent.com/63364024/124396371-f4c75080-dd2a-11eb-89b9-7bbe08074d85.png)
 
 Figure 17(listofschedules): This is the "LIST OF SCHEDULES" Page of owner. Owner can view details of schedules of his buses from here.
-![image](https://user-images.githubusercontent.com/63364024/124396386-06105d00-dd2b-11eb-89d0-03996948c0dd.png)
+
+![listofschedules](https://user-images.githubusercontent.com/63364024/124396386-06105d00-dd2b-11eb-89d0-03996948c0dd.png)
 
 Figure 18(availablebus): This is the "AVAILABLE BUS" Page of counter. Counter can access and book ticket for buses departuring from this counter.
-![image](https://user-images.githubusercontent.com/63364024/124396404-20e2d180-dd2b-11eb-8db3-f40f12e2da53.png)
+
+![availablebus](https://user-images.githubusercontent.com/63364024/124396404-20e2d180-dd2b-11eb-8db3-f40f12e2da53.png)
+
 Figure 19(bookticket_counter): By pressing "GO" user will be able to view seats of the bus. Booked seats will be marked "RED" and unselectable. In "Total Price" section price will be displayed continuously according to seat selection. From counter account online payment is not possible.
 ![bookticket_counter](https://user-images.githubusercontent.com/63364024/124393375-0a814980-dd1c-11eb-8e1c-e23fd3ff9971.png)
 
