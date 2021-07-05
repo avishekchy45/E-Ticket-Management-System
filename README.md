@@ -16,6 +16,24 @@ This system has four different panels of independent responsibility which are Ad
 
 ![image](https://user-images.githubusercontent.com/63364024/114681987-7dd47a00-9d30-11eb-8660-1b314774521e.png)
 
+
+#### Tools Used:
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![BOOTSTRAP](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MYSQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+![JQUERY](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
+![GIT](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+##### OTHERS:
+• https://animate.style/
+• http://www.wave.io/
+• https://uigradients.com/
+• https://datatables.net/
+• https://fonts.google.com/
+• https://stripe.com/
+
+
 #### Some Snapshots:
 Figure 1(index): Here is the Index Page of this project. Any User(registered/non-registered) can search for ticket from here.
 ![index](https://user-images.githubusercontent.com/63364024/124392258-54673100-dd16-11eb-9abb-719f3e6c29e5.png)
@@ -111,22 +129,6 @@ Figure 26(responsive): All the pages of this website is responsive. So users of 
 
 ![responsive](https://user-images.githubusercontent.com/63364024/124393759-c5f6ad80-dd1d-11eb-883a-71f2e81ca329.png)
 
-
-#### Tools Used:
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![BOOTSTRAP](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![MYSQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
-![JQUERY](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
-![GIT](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-##### OTHERS:
-• https://animate.style/
-• http://www.wave.io/
-• https://uigradients.com/
-• https://datatables.net/
-• https://fonts.google.com/
-• https://stripe.com/
 
 #### LIMITATIONS:
 • Though any registered user can pay with international cards, they cannot pay with mobile banking service available in Bangladesh like BKash, Nagad, Rocket etc.

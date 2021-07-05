@@ -11,7 +11,7 @@ if (isset($_POST['go'])) {
       display:none;
   }
   </style>
-  <form target='_self' enctype='multipart/form-data' method='POST' class='font-weight-bolder'>
+  <form target='_self' enctype='multipart/form-data' method='POST' class='font-weight-bolder text-nowrap'>
   <h1 class='text-info'>BOOK TICKET</h1><br>
   <div class='form-group row text-justify'>
     <label for='name' class='col-sm-2 col-form-label'>Passenger Name</label>
@@ -56,10 +56,10 @@ if (isset($_POST['go'])) {
       $seatcolor = "available";
     }
     echo "
-      <div class='form-check form-check-inline text-center'>
-      <input class='form-check-input busseat' type='checkbox' value='$seatnumber' id='seatno' name='choosedseat[]' onclick='changeprice(this);' $booked>
-      <label class='form-check-label font-weight-bolder font-italic badge badge-dark $seatcolor' for='seatno' id='seatlabel'> <span>$seatnumber</span> </label>
-      </div>
+    <div class='form-check form-check-inline text-center'>
+    <input class='form-check-input busseat' type='checkbox' value='$seatnumber' id='seatno' name='choosedseat[]' onclick='changeprice(this);' $booked>
+    <label class='form-check-label font-weight-bolder font-italic badge badge-dark $seatcolor' for='seatno' id='seatlabel'> <span>$seatnumber</span> </label>
+    </div>
     ";
     if (($n % $seat_row) == 0) {
       echo "
@@ -68,37 +68,37 @@ if (isset($_POST['go'])) {
     }
   }
   echo "
-    <br>
-    <div class='form-group row text-justify'>
-      <label for='totalprice' class='col-sm-2 col-form-label'>Total Price</label>
-      <div class='col-sm-10'>
-      <span id='totalprice'> You Must Select at Least One Seat </span>
-      </div>
-    </div> 
-    <div class='form-group row text-justify'>
-      <label for='class' class='col-sm-2 col-form-label'>Class</label>
-      <div class='col-sm-10'>
-      <input type='text' class='form-control' id='class' name='class' value='$class' readonly>
-      </div>
+  <br>
+  <div class='form-group row text-justify'>
+    <label for='totalprice' class='col-sm-2 col-form-label'>Total Price</label>
+    <div class='col-sm-10'>
+    <span id='totalprice'> You Must Select at Least One Seat </span>
     </div>
-    <div class='form-group row text-justify'>
-      <label for='coach' class='col-sm-2 col-form-label'>Coach No</label>
-      <div class='col-sm-10'>
-      <input type='text' class='form-control' id='coach' name='coach' value='$coach' readonly>
-      </div>
+  </div> 
+  <div class='form-group row text-justify'>
+    <label for='class' class='col-sm-2 col-form-label'>Class</label>
+    <div class='col-sm-10'>
+    <input type='text' class='form-control' id='class' name='class' value='$class' readonly>
     </div>
-    <div class='form-group row text-justify'>
-      <label for='price' class='col-sm-2 col-form-label'>Price(Per Ticket)</label>
-      <div class='col-sm-10'>
-      <input type='text' class='form-control' id='price' name='price' value='$price' readonly>
-      </div>
+  </div>
+  <div class='form-group row text-justify'>
+    <label for='coach' class='col-sm-2 col-form-label'>Coach No</label>
+    <div class='col-sm-10'>
+    <input type='text' class='form-control' id='coach' name='coach' value='$coach' readonly>
     </div>
-    <br>
-    <br><button type='submit' class='btn btn-outline-info' value='CONFIRM' name='confirm' id='confirm'>CONFIRM TICKET</button>
-    <a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
-    </form>
-    <br>
-    ";
+  </div>
+  <div class='form-group row text-justify'>
+    <label for='price' class='col-sm-2 col-form-label'>Price(Per Ticket)</label>
+    <div class='col-sm-10'>
+    <input type='text' class='form-control' id='price' name='price' value='$price' readonly>
+    </div>
+  </div>
+  <br>
+  <br><button type='submit' class='btn btn-outline-info' value='CONFIRM' name='confirm' id='confirm'>CONFIRM TICKET</button>
+  <a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
+  </form>
+  <br>
+  ";
 }
 if (isset($_POST['confirm'])) {
   $counter = "$user_id";

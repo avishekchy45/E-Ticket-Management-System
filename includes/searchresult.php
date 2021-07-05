@@ -18,6 +18,7 @@ if (isset($_POST['search'])) {
         ";
     } else {
         echo "
+        <div class='table-responsive'>
         <br><table class='table table-info table-hover' id='list'>
         <caption>List of Available Buses</caption>
         <thead class='thead-dark animate__animated animate__headShake animate__slower'>
@@ -55,6 +56,7 @@ if (isset($_POST['search'])) {
         echo "
         </tbody>
         </table>
+        </div>
         <br><a href='index.php' class='btn btn-outline-primary'>SEARCH AGAIN</a><br>
         ";
     }
